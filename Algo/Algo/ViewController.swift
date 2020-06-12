@@ -13,20 +13,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        printlnList(headNode: myReversedList)
     }
-
-    
-    
-
-
 }
 
-
-    
 //extension Stack: CustomStringConvertible {
 //    var description: String {
 //        return storage.map { "\($0)"}.joined(separator: " ")
 //    }
 //}
-
 
