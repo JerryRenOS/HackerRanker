@@ -22,6 +22,7 @@
 		8F6FDD96248C6145002926D3 /* BinaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6FDD95248C6145002926D3 /* BinaryTests.swift */; };
 		8FA9B2F02492EBB2002A9923 /* ReversingLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA9B2EF2492EBB2002A9923 /* ReversingLinkedList.swift */; };
 		8FC150C6249019AF00574377 /* RandAcsCoExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC150C5249019AF00574377 /* RandAcsCoExtension.swift */; };
+		8FF4D4B32498066F0031756A /* Uda.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF4D4B22498066F0031756A /* Uda.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		8F6FDD95248C6145002926D3 /* BinaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryTests.swift; sourceTree = "<group>"; };
 		8FA9B2EF2492EBB2002A9923 /* ReversingLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReversingLinkedList.swift; sourceTree = "<group>"; };
 		8FC150C5249019AF00574377 /* RandAcsCoExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandAcsCoExtension.swift; sourceTree = "<group>"; };
+		8FF4D4B22498066F0031756A /* Uda.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Uda.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				8FC150C5249019AF00574377 /* RandAcsCoExtension.swift */,
 				8F6FDD92248C6020002926D3 /* FlowingBinary.swift */,
 				8FA9B2EF2492EBB2002A9923 /* ReversingLinkedList.swift */,
+				8FF4D4B22498066F0031756A /* Uda.swift */,
 				8F6FDD6E248C4AA2002926D3 /* Main.storyboard */,
 				8F6FDD71248C4AA9002926D3 /* Assets.xcassets */,
 				8F6FDD73248C4AA9002926D3 /* LaunchScreen.storyboard */,
@@ -226,6 +229,7 @@
 				8F6FDD90248C579D002926D3 /* FlowingStack.swift in Sources */,
 				8FC150C6249019AF00574377 /* RandAcsCoExtension.swift in Sources */,
 				8F37F935248E9AFC00C9CCBF /* OnesAndZerosSearch.swift in Sources */,
+				8FF4D4B32498066F0031756A /* Uda.swift in Sources */,
 				8FA9B2F02492EBB2002A9923 /* ReversingLinkedList.swift in Sources */,
 				8F6FDD69248C4AA2002926D3 /* AppDelegate.swift in Sources */,
 				8F6FDD6B248C4AA2002926D3 /* SceneDelegate.swift in Sources */,
