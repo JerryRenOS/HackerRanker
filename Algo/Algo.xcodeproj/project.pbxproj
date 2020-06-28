@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F27EBC824A178AB000BB451 /* Hashability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F27EBC724A178AB000BB451 /* Hashability.swift */; };
 		8F37F935248E9AFC00C9CCBF /* OnesAndZerosSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F37F934248E9AFC00C9CCBF /* OnesAndZerosSearch.swift */; };
 		8F6FDD69248C4AA2002926D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6FDD68248C4AA2002926D3 /* AppDelegate.swift */; };
 		8F6FDD6B248C4AA2002926D3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6FDD6A248C4AA2002926D3 /* SceneDelegate.swift */; };
-		8F6FDD6D248C4AA2002926D3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6FDD6C248C4AA2002926D3 /* ViewController.swift */; };
+		8F6FDD6D248C4AA2002926D3 /* AlgoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6FDD6C248C4AA2002926D3 /* AlgoViewController.swift */; };
 		8F6FDD70248C4AA2002926D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F6FDD6E248C4AA2002926D3 /* Main.storyboard */; };
 		8F6FDD72248C4AA9002926D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F6FDD71248C4AA9002926D3 /* Assets.xcassets */; };
 		8F6FDD75248C4AA9002926D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F6FDD73248C4AA9002926D3 /* LaunchScreen.storyboard */; };
@@ -36,11 +37,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8F27EBC724A178AB000BB451 /* Hashability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hashability.swift; sourceTree = "<group>"; };
 		8F37F934248E9AFC00C9CCBF /* OnesAndZerosSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnesAndZerosSearch.swift; sourceTree = "<group>"; };
 		8F6FDD65248C4AA2002926D3 /* Algo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Algo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F6FDD68248C4AA2002926D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F6FDD6A248C4AA2002926D3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8F6FDD6C248C4AA2002926D3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8F6FDD6C248C4AA2002926D3 /* AlgoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgoViewController.swift; sourceTree = "<group>"; };
 		8F6FDD6F248C4AA2002926D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8F6FDD71248C4AA9002926D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8F6FDD74248C4AA9002926D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -98,13 +100,14 @@
 			children = (
 				8F6FDD68248C4AA2002926D3 /* AppDelegate.swift */,
 				8F6FDD6A248C4AA2002926D3 /* SceneDelegate.swift */,
-				8F6FDD6C248C4AA2002926D3 /* ViewController.swift */,
+				8F27EBC724A178AB000BB451 /* Hashability.swift */,
 				8F6FDD8F248C579D002926D3 /* FlowingStack.swift */,
 				8F37F934248E9AFC00C9CCBF /* OnesAndZerosSearch.swift */,
 				8FC150C5249019AF00574377 /* RandAcsCoExtension.swift */,
 				8F6FDD92248C6020002926D3 /* FlowingBinary.swift */,
-				8FA9B2EF2492EBB2002A9923 /* ReversingLinkedList.swift */,
 				8FE35B172499C9320062FF4A /* CursiveCursion.swift */,
+				8FA9B2EF2492EBB2002A9923 /* ReversingLinkedList.swift */,
+				8F6FDD6C248C4AA2002926D3 /* AlgoViewController.swift */,
 				8F6FDD6E248C4AA2002926D3 /* Main.storyboard */,
 				8F6FDD71248C4AA9002926D3 /* Assets.xcassets */,
 				8F6FDD73248C4AA9002926D3 /* LaunchScreen.storyboard */,
@@ -225,7 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F6FDD6D248C4AA2002926D3 /* ViewController.swift in Sources */,
+				8F6FDD6D248C4AA2002926D3 /* AlgoViewController.swift in Sources */,
 				8F6FDD90248C579D002926D3 /* FlowingStack.swift in Sources */,
 				8FC150C6249019AF00574377 /* RandAcsCoExtension.swift in Sources */,
 				8F37F935248E9AFC00C9CCBF /* OnesAndZerosSearch.swift in Sources */,
@@ -233,6 +236,7 @@
 				8F6FDD69248C4AA2002926D3 /* AppDelegate.swift in Sources */,
 				8F6FDD6B248C4AA2002926D3 /* SceneDelegate.swift in Sources */,
 				8FE35B182499C9320062FF4A /* CursiveCursion.swift in Sources */,
+				8F27EBC824A178AB000BB451 /* Hashability.swift in Sources */,
 				8F6FDD93248C6020002926D3 /* FlowingBinary.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

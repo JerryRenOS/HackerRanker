@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  AlgoViewController.swift
 //  Algo
 //
 //  Created by Jerry Ren on 6/6/20.
@@ -8,11 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class AlgoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         printlnList(headNode: myReversedList)
     }
 }
