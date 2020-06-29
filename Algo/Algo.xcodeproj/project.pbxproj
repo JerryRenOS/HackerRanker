@@ -21,6 +21,8 @@
 		8F6FDD93248C6020002926D3 /* FlowingBinary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6FDD92248C6020002926D3 /* FlowingBinary.swift */; };
 		8F6FDD94248C6108002926D3 /* FlowingBinary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6FDD92248C6020002926D3 /* FlowingBinary.swift */; };
 		8F6FDD96248C6145002926D3 /* BinaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6FDD95248C6145002926D3 /* BinaryTests.swift */; };
+		8FA3B4A324AA614B006913B8 /* BinaTreeBreezeThrough.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA3B4A224AA614B006913B8 /* BinaTreeBreezeThrough.swift */; };
+		8FA3B4A524AA6E45006913B8 /* BSTsortability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA3B4A424AA6E45006913B8 /* BSTsortability.swift */; };
 		8FA9B2F02492EBB2002A9923 /* ReversingLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA9B2EF2492EBB2002A9923 /* ReversingLinkedList.swift */; };
 		8FC150C6249019AF00574377 /* RandAcsCoExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC150C5249019AF00574377 /* RandAcsCoExtension.swift */; };
 		8FE35B182499C9320062FF4A /* CursiveCursion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE35B172499C9320062FF4A /* CursiveCursion.swift */; };
@@ -54,6 +56,8 @@
 		8F6FDD8F248C579D002926D3 /* FlowingStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowingStack.swift; sourceTree = "<group>"; };
 		8F6FDD92248C6020002926D3 /* FlowingBinary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowingBinary.swift; sourceTree = "<group>"; };
 		8F6FDD95248C6145002926D3 /* BinaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryTests.swift; sourceTree = "<group>"; };
+		8FA3B4A224AA614B006913B8 /* BinaTreeBreezeThrough.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaTreeBreezeThrough.swift; sourceTree = "<group>"; };
+		8FA3B4A424AA6E45006913B8 /* BSTsortability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSTsortability.swift; sourceTree = "<group>"; };
 		8FA9B2EF2492EBB2002A9923 /* ReversingLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReversingLinkedList.swift; sourceTree = "<group>"; };
 		8FC150C5249019AF00574377 /* RandAcsCoExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandAcsCoExtension.swift; sourceTree = "<group>"; };
 		8FE35B172499C9320062FF4A /* CursiveCursion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursiveCursion.swift; sourceTree = "<group>"; };
@@ -105,6 +109,8 @@
 				8F37F934248E9AFC00C9CCBF /* OnesAndZerosSearch.swift */,
 				8FC150C5249019AF00574377 /* RandAcsCoExtension.swift */,
 				8F6FDD92248C6020002926D3 /* FlowingBinary.swift */,
+				8FA3B4A224AA614B006913B8 /* BinaTreeBreezeThrough.swift */,
+				8FA3B4A424AA6E45006913B8 /* BSTsortability.swift */,
 				8FE35B172499C9320062FF4A /* CursiveCursion.swift */,
 				8FA9B2EF2492EBB2002A9923 /* ReversingLinkedList.swift */,
 				8F6FDD6C248C4AA2002926D3 /* AlgoViewController.swift */,
@@ -230,10 +236,12 @@
 			files = (
 				8F6FDD6D248C4AA2002926D3 /* AlgoViewController.swift in Sources */,
 				8F6FDD90248C579D002926D3 /* FlowingStack.swift in Sources */,
+				8FA3B4A524AA6E45006913B8 /* BSTsortability.swift in Sources */,
 				8FC150C6249019AF00574377 /* RandAcsCoExtension.swift in Sources */,
 				8F37F935248E9AFC00C9CCBF /* OnesAndZerosSearch.swift in Sources */,
 				8FA9B2F02492EBB2002A9923 /* ReversingLinkedList.swift in Sources */,
 				8F6FDD69248C4AA2002926D3 /* AppDelegate.swift in Sources */,
+				8FA3B4A324AA614B006913B8 /* BinaTreeBreezeThrough.swift in Sources */,
 				8F6FDD6B248C4AA2002926D3 /* SceneDelegate.swift in Sources */,
 				8FE35B182499C9320062FF4A /* CursiveCursion.swift in Sources */,
 				8F27EBC824A178AB000BB451 /* Hashability.swift in Sources */,

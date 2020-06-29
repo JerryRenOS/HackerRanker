@@ -54,9 +54,6 @@ final class SplitInHalvesSearchTest: XCTestCase {
     func test_splitInHalves() {
         let testArray = [7, 9, 11, 18, 26, 29, 31, 37, 38]
         XCTAssertEqual(testArray.splitInHalvesSearch(for: 11), 2)
-        
-        
-        
     }
     
 }
