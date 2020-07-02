@@ -1329,6 +1329,25 @@ import UIKit
 //
 //extraLongFactorials(n: 20)
 
+// MARK: - Non-recursive factorial attempt
+
+//func factCalculation(_ targetNumber: Int) -> Double {
+//
+//    var transitionArray: [Double] = []
+//    for index in 1...targetNumber {
+//        var tweakedIndex = Double(index)
+//        transitionArray.append(tweakedIndex)
+//    }
+//    let s = transitionArray.reduce(1, { (m, n) in
+//        m * n
+//    })
+//    print(Int(s))
+//
+//    return s
+//}
+
+//factCalculation(19) // turning 'em into doubles still can't penetrate the 20 -> 21 barrier smh
+
 // MARK: - Separating Numbers
 
 //func separateNumbers(s: String) -> Void {
