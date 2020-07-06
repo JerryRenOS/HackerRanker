@@ -9,9 +9,18 @@
 import Foundation
 import UIKit
 
-
-
 class FriendsTVSeries {
+    
+    fileprivate func hangOut(people: [MainCharactersName]) {
+        var scene: String = ""
+        for individual in people {
+            scene.append("\(individual) and ")
+        }
+        let leng = scene.count
+        scene = String(scene.prefix(leng - 4))
+        scene.append("are hanging out")
+        print(scene)
+    }
     
     var episodeNumber: Int
     var seasonNumber: Int
@@ -20,21 +29,7 @@ class FriendsTVSeries {
         self.episodeNumber = episodeNumber
         self.seasonNumber = seasonNumber
     }
-    
-    func hangOut(people: [MainCharactersName]) {
-        var description: String = ""
-        for individual in people {
-           description += "\(individual) and"
-        }
-        description += "are hanging out"
-        print(description)
-    }
-    
-    func getMarried(a: FriendsMainCharacter, b: FriendsMainCharacter) {
-        print("\(a) and \(b) are getting married")
-    }
 
-    
     enum SignificantLocations {
         case CentralPerkCoffeHouse
         case MonicaAndRachelsApartment
@@ -43,13 +38,12 @@ class FriendsTVSeries {
 }
 
 struct FriendsMainCharacter {
-    
     var name: MainCharactersName
     var age: Int
+    var birthday: Date
     var personality: PersonalityType
-    var spouse: String?
-    
-//    init() {}
+    var currentSpouse: String?
+    var datingHistory: [SupportingCharacter]
 }
 
 enum MainCharactersName {
@@ -59,6 +53,15 @@ enum MainCharactersName {
     case Rachel
     case Ross
     case Monica
+}
+
+struct SupportingCharacter {
+    var characterName: String
+    var personality: PersonalityType
+    init(characterName: String, personality: PersonalityType) {
+        self.characterName = characterName
+        self.personality = personality
+    }
 }
 
 enum PersonalityType {
@@ -79,22 +82,15 @@ enum PersonalityType {
     case ISFP
     case ISTP
 }
-
-struct SupportingCharacters {
-    var characterName: String
-    init(characterName: String) {
-        self.characterName = characterName
-    }
-}
-
-
-let friend = FriendsTVSeries.init(episodeNumber: 11, seasonNumber: 6)
-// friend.hangOut(people: [.Chandler, .Phoebe, .Rachel])
+     
+let friendz = FriendsTVSeries.init(episodeNumber: 11, seasonNumber: 6)
+let crew = friendz.hangOut(people: [.Chandler, .Phoebe, .Joey])
 
       
 
         
-// MARK: - examples of enum's helpfulness
+
+// MARK: - random.rand enum
 
 enum CompassPoint {
     case north, south, east, west
@@ -104,9 +100,7 @@ enum CompassPoint {
 }
 var currentDirection = CompassPoint.west
 let rememberedDirection = currentDirection
-// currentDirection.turnNorth()
-
-
+let expressionsNotAllowedAtTopLevel = currentDirection.turnNorth()
 
 // MARK: - NYC (perhaps dead-end)
 
@@ -118,9 +112,7 @@ class NewYorkCity {
         = ["The Big Apple", "The City That Never Sleeps", "Empire City", "Gotham", "The Melting Pot"]
     
     var bridges: [String] = GloballyUsed.nycBridges
-             
     // what kinda behaviors / functions can I write for NYC?  Darn it! It's not an animal or a character
-    
 }
                   
 struct Boroughs {
@@ -140,7 +132,5 @@ struct SightSeeing {
 struct GloballyUsed {
     
     static let nycBridges: [String] = ["Williamsburg Bridge", "George Washington Bridge","Manhattan Bridge", "Henry Hudson Bridge", "Queensboro Bridge", "Bronx-Whitestone Bridge", "Brooklyn Bridge"]
-    
 }
  
-
