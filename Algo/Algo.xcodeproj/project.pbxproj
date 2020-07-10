@@ -27,6 +27,7 @@
 		8FA3B4A524AA6E45006913B8 /* BSTsortability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA3B4A424AA6E45006913B8 /* BSTsortability.swift */; };
 		8FA9B2F02492EBB2002A9923 /* ReversingLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA9B2EF2492EBB2002A9923 /* ReversingLinkedList.swift */; };
 		8FC150C6249019AF00574377 /* RandAcsCoExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC150C5249019AF00574377 /* RandAcsCoExtension.swift */; };
+		8FD682AE24B818F500C4D442 /* SomDemOfHigherOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD682AD24B818F500C4D442 /* SomDemOfHigherOrder.swift */; };
 		8FE35B182499C9320062FF4A /* CursiveCursion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE35B172499C9320062FF4A /* CursiveCursion.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		8FA3B4A424AA6E45006913B8 /* BSTsortability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSTsortability.swift; sourceTree = "<group>"; };
 		8FA9B2EF2492EBB2002A9923 /* ReversingLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReversingLinkedList.swift; sourceTree = "<group>"; };
 		8FC150C5249019AF00574377 /* RandAcsCoExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandAcsCoExtension.swift; sourceTree = "<group>"; };
+		8FD682AD24B818F500C4D442 /* SomDemOfHigherOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomDemOfHigherOrder.swift; sourceTree = "<group>"; };
 		8FE35B172499C9320062FF4A /* CursiveCursion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursiveCursion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,6 +122,7 @@
 				8F6FDD6C248C4AA2002926D3 /* AlgoViewController.swift */,
 				8F626B4D24AED012003A5FAC /* PrimeFiboFacto.swift */,
 				8F6AD10624B186C70085B353 /* RealWorldCrap.swift */,
+				8FD682AD24B818F500C4D442 /* SomDemOfHigherOrder.swift */,
 				8F6FDD6E248C4AA2002926D3 /* Main.storyboard */,
 				8F6FDD71248C4AA9002926D3 /* Assets.xcassets */,
 				8F6FDD73248C4AA9002926D3 /* LaunchScreen.storyboard */,
@@ -253,6 +256,7 @@
 				8F626B4E24AED012003A5FAC /* PrimeFiboFacto.swift in Sources */,
 				8F27EBC824A178AB000BB451 /* Hashability.swift in Sources */,
 				8F6AD10724B186C70085B353 /* RealWorldCrap.swift in Sources */,
+				8FD682AE24B818F500C4D442 /* SomDemOfHigherOrder.swift in Sources */,
 				8F6FDD93248C6020002926D3 /* FlowingBinary.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
