@@ -18,6 +18,7 @@ class SorsationViewController: UIViewController {
         view.backgroundColor = .cyan
         
         insertionality(unsorted: &arrayForExperiment)
+        selectionSort(intArray: arrayForExperiment)
     }
 }
 
@@ -37,6 +38,26 @@ func insertionality(unsorted: inout[Int]) -> [Int] {
     print(sorted)
   
     return sorted
+}
+
+fileprivate func selectionSort(intArray: [Int]) -> [Int] {
+    
+    var intArrayInOperation = intArray
+    for indexCurrent in 0..<(intArrayInOperation.count - 1) {
+        var indexMin = indexCurrent
+        
+        for x in (indexCurrent + 1)..<intArray.count {
+            if intArrayInOperation[x] < intArrayInOperation[indexMin] {
+                indexMin = x
+            }
+        }
+        if indexMin != indexCurrent {
+            let holder = intArrayInOperation[indexCurrent]
+            intArrayInOperation.swapAt(indexCurrent, indexMin)
+        }
+    }
+    print(intArrayInOperation)
+    return intArrayInOperation
 }
          
 
