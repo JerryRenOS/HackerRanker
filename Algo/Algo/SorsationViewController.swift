@@ -24,7 +24,9 @@ class SorsationViewController: UIViewController {
 
 
 func insertionality(unsorted: inout[Int]) -> [Int] {
+    
     guard unsorted.count > 1 else { return unsorted }
+    
     for index1 in 1..<unsorted.count {
         for index2 in (1...index1).reversed() {
             if unsorted[index2] < unsorted[index2 - 1] {
@@ -34,11 +36,13 @@ func insertionality(unsorted: inout[Int]) -> [Int] {
             }
         }
     }
+    
     let sorted = unsorted
     print(sorted)
   
     return sorted
 }
+
 
 fileprivate func selectionSort(intArray: [Int]) -> [Int] {
     
