@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8F27EBC824A178AB000BB451 /* Hashability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F27EBC724A178AB000BB451 /* Hashability.swift */; };
+		8F2F8FDB24C54AC700FC39EA /* EnQDeQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2F8FDA24C54AC700FC39EA /* EnQDeQ.swift */; };
 		8F37F935248E9AFC00C9CCBF /* OnesAndZerosSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F37F934248E9AFC00C9CCBF /* OnesAndZerosSearch.swift */; };
 		8F6088E624BE135900A04417 /* SorsationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6088E524BE135900A04417 /* SorsationViewController.swift */; };
 		8F626B4E24AED012003A5FAC /* PrimeFiboFacto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F626B4D24AED012003A5FAC /* PrimeFiboFacto.swift */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		8F27EBC724A178AB000BB451 /* Hashability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hashability.swift; sourceTree = "<group>"; };
+		8F2F8FDA24C54AC700FC39EA /* EnQDeQ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnQDeQ.swift; sourceTree = "<group>"; };
 		8F37F934248E9AFC00C9CCBF /* OnesAndZerosSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnesAndZerosSearch.swift; sourceTree = "<group>"; };
 		8F6088E524BE135900A04417 /* SorsationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SorsationViewController.swift; sourceTree = "<group>"; };
 		8F626B4D24AED012003A5FAC /* PrimeFiboFacto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimeFiboFacto.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				8FD682AD24B818F500C4D442 /* SomDemOfHigherOrder.swift */,
 				8F6088E524BE135900A04417 /* SorsationViewController.swift */,
 				8FC545FC24C155690010F7C9 /* Miscellaneousness.swift */,
+				8F2F8FDA24C54AC700FC39EA /* EnQDeQ.swift */,
 				8F6FDD6E248C4AA2002926D3 /* Main.storyboard */,
 				8F6FDD71248C4AA9002926D3 /* Assets.xcassets */,
 				8F6FDD73248C4AA9002926D3 /* LaunchScreen.storyboard */,
@@ -252,6 +255,7 @@
 				8F6FDD6D248C4AA2002926D3 /* AlgoViewController.swift in Sources */,
 				8F6FDD90248C579D002926D3 /* FlowingStack.swift in Sources */,
 				8FA3B4A524AA6E45006913B8 /* BSTsortability.swift in Sources */,
+				8F2F8FDB24C54AC700FC39EA /* EnQDeQ.swift in Sources */,
 				8FC150C6249019AF00574377 /* RandAcsCoExtension.swift in Sources */,
 				8FC545FD24C155690010F7C9 /* Miscellaneousness.swift in Sources */,
 				8F37F935248E9AFC00C9CCBF /* OnesAndZerosSearch.swift in Sources */,
