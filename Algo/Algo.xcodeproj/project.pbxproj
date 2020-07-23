@@ -26,6 +26,7 @@
 		8F6FDD93248C6020002926D3 /* FlowingBinary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6FDD92248C6020002926D3 /* FlowingBinary.swift */; };
 		8F6FDD94248C6108002926D3 /* FlowingBinary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6FDD92248C6020002926D3 /* FlowingBinary.swift */; };
 		8F6FDD96248C6145002926D3 /* BinaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6FDD95248C6145002926D3 /* BinaryTests.swift */; };
+		8FA0E89D24C9421700C94F8A /* Apollo11.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA0E89C24C9421700C94F8A /* Apollo11.swift */; };
 		8FA3B4A324AA614B006913B8 /* BinaTreeBreezeThrough.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA3B4A224AA614B006913B8 /* BinaTreeBreezeThrough.swift */; };
 		8FA3B4A524AA6E45006913B8 /* BSTsortability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA3B4A424AA6E45006913B8 /* BSTsortability.swift */; };
 		8FA9B2F02492EBB2002A9923 /* ReversingLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA9B2EF2492EBB2002A9923 /* ReversingLinkedList.swift */; };
@@ -68,6 +69,7 @@
 		8F6FDD8F248C579D002926D3 /* FlowingStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowingStack.swift; sourceTree = "<group>"; };
 		8F6FDD92248C6020002926D3 /* FlowingBinary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowingBinary.swift; sourceTree = "<group>"; };
 		8F6FDD95248C6145002926D3 /* BinaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryTests.swift; sourceTree = "<group>"; };
+		8FA0E89C24C9421700C94F8A /* Apollo11.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apollo11.swift; sourceTree = "<group>"; };
 		8FA3B4A224AA614B006913B8 /* BinaTreeBreezeThrough.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaTreeBreezeThrough.swift; sourceTree = "<group>"; };
 		8FA3B4A424AA6E45006913B8 /* BSTsortability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSTsortability.swift; sourceTree = "<group>"; };
 		8FA9B2EF2492EBB2002A9923 /* ReversingLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReversingLinkedList.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				8FC545FC24C155690010F7C9 /* Miscellaneousness.swift */,
 				8F2F8FDA24C54AC700FC39EA /* EnQDeQ.swift */,
 				8F2F8FDE24C69F9100FC39EA /* QueUe.swift */,
+				8FA0E89C24C9421700C94F8A /* Apollo11.swift */,
 				8F6FDD6E248C4AA2002926D3 /* Main.storyboard */,
 				8F6FDD71248C4AA9002926D3 /* Assets.xcassets */,
 				8F6FDD73248C4AA9002926D3 /* LaunchScreen.storyboard */,
@@ -257,6 +260,7 @@
 			files = (
 				8F6FDD6D248C4AA2002926D3 /* AlgoViewController.swift in Sources */,
 				8F6FDD90248C579D002926D3 /* FlowingStack.swift in Sources */,
+				8FA0E89D24C9421700C94F8A /* Apollo11.swift in Sources */,
 				8FA3B4A524AA6E45006913B8 /* BSTsortability.swift in Sources */,
 				8F2F8FDB24C54AC700FC39EA /* EnQDeQ.swift in Sources */,
 				8FC150C6249019AF00574377 /* RandAcsCoExtension.swift in Sources */,
