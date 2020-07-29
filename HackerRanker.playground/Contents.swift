@@ -1494,7 +1494,7 @@ import UIKit
 //    return false
 //}
 //print(linearSearch(searchValue: 11, array: numbersForTestings))
-//
+
 //func binarySearch(searchValue: Int, array: [Int]) -> Bool {
 //
 //    var rightIndex = array.count - 1
