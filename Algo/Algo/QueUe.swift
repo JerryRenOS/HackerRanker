@@ -28,4 +28,4 @@ func queuesWithQoS() {
     }
 }
 
-queuesWithQoS()
+// queuesWithQoS()
