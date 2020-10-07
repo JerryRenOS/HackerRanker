@@ -35,6 +35,7 @@
 		8FC545FD24C155690010F7C9 /* Miscellaneousness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC545FC24C155690010F7C9 /* Miscellaneousness.swift */; };
 		8FD682AE24B818F500C4D442 /* SomDemOfHigherOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD682AD24B818F500C4D442 /* SomDemOfHigherOrder.swift */; };
 		8FE35B182499C9320062FF4A /* CursiveCursion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE35B172499C9320062FF4A /* CursiveCursion.swift */; };
+		8FFEA3BE252CC25D00284B65 /* BinaTreeSertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FFEA3BD252CC25D00284B65 /* BinaTreeSertion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		8FC545FC24C155690010F7C9 /* Miscellaneousness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Miscellaneousness.swift; sourceTree = "<group>"; };
 		8FD682AD24B818F500C4D442 /* SomDemOfHigherOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomDemOfHigherOrder.swift; sourceTree = "<group>"; };
 		8FE35B172499C9320062FF4A /* CursiveCursion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursiveCursion.swift; sourceTree = "<group>"; };
+		8FFEA3BD252CC25D00284B65 /* BinaTreeSertion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaTreeSertion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,16 +133,17 @@
 				8FA3B4A424AA6E45006913B8 /* BSTsortability.swift */,
 				8FE35B172499C9320062FF4A /* CursiveCursion.swift */,
 				8FA9B2EF2492EBB2002A9923 /* ReversingLinkedList.swift */,
-				8F6FDD6C248C4AA2002926D3 /* AlgoViewController.swift */,
 				8F626B4D24AED012003A5FAC /* PrimeFiboFacto.swift */,
 				8F6AD10624B186C70085B353 /* RealWorldCrap.swift */,
 				8FD682AD24B818F500C4D442 /* SomDemOfHigherOrder.swift */,
-				8F6088E524BE135900A04417 /* SorsationViewController.swift */,
 				8FC545FC24C155690010F7C9 /* Miscellaneousness.swift */,
 				8F2F8FDA24C54AC700FC39EA /* EnQDeQ.swift */,
 				8F2F8FDE24C69F9100FC39EA /* QueUe.swift */,
 				8FA0E89C24C9421700C94F8A /* Apollo11.swift */,
 				8FAFB5BC251D002600E8A694 /* ProtoProto.swift */,
+				8F6FDD6C248C4AA2002926D3 /* AlgoViewController.swift */,
+				8F6088E524BE135900A04417 /* SorsationViewController.swift */,
+				8FFEA3BD252CC25D00284B65 /* BinaTreeSertion.swift */,
 				8F6FDD6E248C4AA2002926D3 /* Main.storyboard */,
 				8F6FDD71248C4AA9002926D3 /* Assets.xcassets */,
 				8F6FDD73248C4AA9002926D3 /* LaunchScreen.storyboard */,
@@ -273,6 +276,7 @@
 				8F6FDD69248C4AA2002926D3 /* AppDelegate.swift in Sources */,
 				8FA3B4A324AA614B006913B8 /* BinaTreeBreezeThrough.swift in Sources */,
 				8F6FDD6B248C4AA2002926D3 /* SceneDelegate.swift in Sources */,
+				8FFEA3BE252CC25D00284B65 /* BinaTreeSertion.swift in Sources */,
 				8FAFB5BD251D002600E8A694 /* ProtoProto.swift in Sources */,
 				8F6088E624BE135900A04417 /* SorsationViewController.swift in Sources */,
 				8FE35B182499C9320062FF4A /* CursiveCursion.swift in Sources */,
