@@ -31,6 +31,7 @@
 		8FA3B4A524AA6E45006913B8 /* BSTsortability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA3B4A424AA6E45006913B8 /* BSTsortability.swift */; };
 		8FA9B2F02492EBB2002A9923 /* ReversingLinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA9B2EF2492EBB2002A9923 /* ReversingLinkedList.swift */; };
 		8FAFB5BD251D002600E8A694 /* ProtoProto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FAFB5BC251D002600E8A694 /* ProtoProto.swift */; };
+		8FBBAA6B254323AC00ABA0DB /* BinenodeTestos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBBAA6A254323AC00ABA0DB /* BinenodeTestos.swift */; };
 		8FC150C6249019AF00574377 /* RandAcsCoExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC150C5249019AF00574377 /* RandAcsCoExtension.swift */; };
 		8FC545FD24C155690010F7C9 /* Miscellaneousness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC545FC24C155690010F7C9 /* Miscellaneousness.swift */; };
 		8FD682AE24B818F500C4D442 /* SomDemOfHigherOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD682AD24B818F500C4D442 /* SomDemOfHigherOrder.swift */; };
@@ -76,6 +77,7 @@
 		8FA3B4A424AA6E45006913B8 /* BSTsortability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSTsortability.swift; sourceTree = "<group>"; };
 		8FA9B2EF2492EBB2002A9923 /* ReversingLinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReversingLinkedList.swift; sourceTree = "<group>"; };
 		8FAFB5BC251D002600E8A694 /* ProtoProto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtoProto.swift; sourceTree = "<group>"; };
+		8FBBAA6A254323AC00ABA0DB /* BinenodeTestos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinenodeTestos.swift; sourceTree = "<group>"; };
 		8FC150C5249019AF00574377 /* RandAcsCoExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandAcsCoExtension.swift; sourceTree = "<group>"; };
 		8FC545FC24C155690010F7C9 /* Miscellaneousness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Miscellaneousness.swift; sourceTree = "<group>"; };
 		8FD682AD24B818F500C4D442 /* SomDemOfHigherOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomDemOfHigherOrder.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			children = (
 				8F6FDD7F248C4AAA002926D3 /* StackTests.swift */,
 				8F6FDD95248C6145002926D3 /* BinaryTests.swift */,
+				8FBBAA6A254323AC00ABA0DB /* BinenodeTestos.swift */,
 				8F6FDD81248C4AAA002926D3 /* Info.plist */,
 			);
 			path = AlgoTests;
@@ -293,6 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FBBAA6B254323AC00ABA0DB /* BinenodeTestos.swift in Sources */,
 				8F6FDD96248C6145002926D3 /* BinaryTests.swift in Sources */,
 				8F6FDD91248C57DB002926D3 /* StackTests.swift in Sources */,
 				8F6FDD8C248C572E002926D3 /* TestFromScratch.swift in Sources */,

@@ -49,3 +49,11 @@ class BineSearchTree {
         }
     }
 }
+
+extension Binenode { // questionable but ...
+    func traversingInOrder(visting: (DesiredType) -> Void) {
+        left?.traversingInOrder(visting: visting)
+        visting(val)
+        right?.traversingInOrder(visting: visting)
+    }
+}

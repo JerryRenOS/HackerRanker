@@ -1,11 +1,11 @@
 import Foundation
 import UIKit
-
+import XCTest
 // A constantly evolving mis·cel·la·ne·ous collection in-progress //
    
  
 // __________________________________ //
-// Oct 22nd 2020
+// Oct 22nd & Oct 23rd 2020
 // BinaTreeBine
 
 open class Binenode<DesiredType> {
@@ -17,6 +17,40 @@ open class Binenode<DesiredType> {
     var left: Binenode?
 }
 
+// left -> root -> right -> repeat (traverseinorder)
+extension Binenode { // questionable but ...
+    func traversingInOrder(visting: (DesiredType) -> Void) {
+        left?.traversingInOrder(visting: visting)
+        visting(val)
+        right?.traversingInOrder(visting: visting)
+    }
+}
+
+// xctestos in pground lmao
+class BinaTest: XCTestCase {
+        var treeConstruction: Binenode<Int> = {
+        let zero = Binenode(val: 0)
+        let one = Binenode(val: 1)
+        let five = Binenode(val: 5)
+        let seven = Binenode(val: 7)
+        let eight = Binenode(val: 8)
+        let nine =  Binenode(val: 9)
+            seven.left = one
+            one.left = zero
+            one.right = five
+            seven.right = nine
+            nine.left = eight
+        return seven
+    }()
+    
+    func testingTraversingInOrder() {
+        var testArr: [Int] = []
+        treeConstruction.traversingInOrder { testArr.append($0) }
+        XCTAssertEqual(testArr, [0, 1, 5, 7, 8, 9])
+    }
+}
+
+// binatree from binenode
 class BinaTree<DesiredType> {
     var root: Binenode<Int>?
     init(rootVal: Int) {
@@ -35,6 +69,7 @@ class BinaTree<DesiredType> {
     }
 }
 
+// binesearchtree from binenode
 class BineSearchTree {
     var rootNode: Binenode<Int>?
     
@@ -65,6 +100,7 @@ class BineSearchTree {
     }
 }
 
+// _________________________________________ //
 // Oct 22nd 2020
 // KVC & KVO
 class KVCProfile: NSObject {
@@ -140,7 +176,6 @@ func helper(N: Int) -> Int{
     }
     else {
         var str = String( N )
-        ;
         var arr = Array(str)
         var res = "-"
         for i in 0..<arr.count {
