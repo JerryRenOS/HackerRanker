@@ -100,6 +100,59 @@ class BineSearchTree {
     }
 }
 
+
+// _________________________________________ //
+// Oct 26th
+// Coding challenge
+
+fileprivate func Average(arr: [Double]) -> [Double] {
+    
+    if arr.count == 0 {
+        return []
+    } else if arr.count == 1 {
+        return arr
+    } else if arr.count == 2 {
+        let avg = (arr[0] + arr[1]) / 2
+        return [avg, avg]
+    }
+    else {
+        var newArr: [Double] = [(arr[0] + arr[1])/2]
+        let arrLength = arr.count
+        
+        for index in 1...arrLength - 2 {
+            
+            let newElement = (arr[index+1] + arr[index] + arr[index-1]) / 3
+            newArr.append(newElement)
+        }
+        newArr.append((arr[arrLength-1] + arr[arrLength-2])/2)
+        
+        return newArr
+    }
+}
+
+var input3 = [-1.0,-2.0,-3.0,-4.0,-5.0]
+var input2 = [3.7, 7.3]
+var input1 = [11.11]
+var input0: [Double] = []
+
+print(Average(arr: input3))
+print(Average(arr: input2))
+print(Average(arr: input1))
+print(Average(arr: input0))
+
+XCTAssertEqual(Average(arr: input0), [] as [Double])
+XCTAssertEqual(Average(arr: input1), [11.11])
+XCTAssertEqual(Average(arr: input2), [5.5, 5.5])
+XCTAssertEqual(Average(arr: input3), [1.5, 2, 3, 4, 4.5])
+
+class PlayXTest: XCTest {
+    func testostAverage() {
+        // PlayXTest.defaultTestSuite.run()
+    }
+}
+
+
+
 // _________________________________________ //
 // Oct 22nd 2020
 // KVC & KVO
