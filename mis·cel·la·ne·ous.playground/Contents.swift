@@ -2,7 +2,34 @@ import Foundation
 import UIKit
 import XCTest
 // A constantly evolving mis·cel·la·ne·ous collection in-progress //
-   
+      
+     
+// __________________________________ //
+// Oct 27th
+extension String {
+    func removingAllTheWhiteSpaces() -> String {
+        return components(separatedBy: .whitespaces).joined()
+    }
+}
+
+func stringIntoArr(preTransformed: String) -> Array<String> {
+    var tempaArr: [String] = []
+    for element in preTransformed {
+        tempaArr.append(String(element))
+    }
+    return tempaArr
+}
+
+func gettingIndexInAString(targetString: String, index:Int) -> String {
+    let beginner = targetString.startIndex
+    let starter = targetString.index(beginner, offsetBy: index)
+    let finisher = targetString.index(beginner, offsetBy: index + 1)
+    
+    let toBeReturned = targetString[starter..<finisher]
+    print(toBeReturned)
+    return String(toBeReturned)
+}
+
  
 // __________________________________ //
 // Oct 22nd & Oct 23rd 2020
