@@ -2,10 +2,9 @@ import Foundation
 import UIKit
 import XCTest
 // A constantly evolving mis·cel·la·ne·ous collection in-progress //
-      
-     
+
 // __________________________________ //
-// Oct 27th
+// Oct 27th 2020
 extension String {
     func removingAllTheWhiteSpaces() -> String {
         return components(separatedBy: .whitespaces).joined()
@@ -29,6 +28,69 @@ func gettingIndexInAString(targetString: String, index:Int) -> String {
     print(toBeReturned)
     return String(toBeReturned)
 }
+
+// __________________________________ //
+// Oct 28th 2020
+// reverse-summing two linkedlists - arr approach
+                 
+func summationOfLinkedLists( linkedArrayOne: Array<Int>, linkedArrayTwo: [Int]) -> Int {
+    
+    let reversedLinkedOne = Array(linkedArrayOne.reversed())
+    let reversedLinkedTwo = Array(linkedArrayTwo.reversed())
+    
+    let linkedOneLength = reversedLinkedOne.count
+    let linkedTwoLength = reversedLinkedTwo.count
+    let biggerLength = max(linkedOneLength, linkedTwoLength)
+    let smallerLength = min(linkedOneLength, linkedTwoLength)
+    
+    var biggerLinked: Array<Int>
+    var smallerLinked: Array<Int>
+
+    switch linkedOneLength > linkedTwoLength {
+    case true:
+        biggerLinked = reversedLinkedOne
+        smallerLinked = reversedLinkedTwo
+    case false:
+        biggerLinked = reversedLinkedTwo
+        smallerLinked = reversedLinkedOne
+    }
+    var carryOver = 0
+    var digitsArr = [Int].init()
+                             
+    for index in 0...biggerLength-1 {
+        let upperNum = biggerLinked[index]
+    
+        if index <= smallerLength-1 {
+            let lowerNum = smallerLinked[index]
+            let upperlowerSum = upperNum + lowerNum
+            
+            let currentDigit = (carryOver + upperlowerSum) % 10
+            carryOver = upperlowerSum / 10
+            digitsArr.append(currentDigit)
+        }
+        else {
+            let currentDigit = (upperNum+carryOver) % 10
+            switch carryOver + upperNum {
+            case 10:
+                carryOver = 1
+            default:
+                carryOver = 0
+            }
+            digitsArr.append(currentDigit)
+        }
+    }
+    if carryOver == 1 {
+        digitsArr.append(1)
+    }
+    let strArr = digitsArr.map { String($0) }
+    let digitsStr = strArr.joined()
+    let finalResult = Int(digitsStr)
+    
+    return finalResult ?? 0
+}
+summationOfLinkedLists(linkedArrayOne: [2, 4, 3], linkedArrayTwo: [5, 6, 4])
+summationOfLinkedLists(linkedArrayOne: [0], linkedArrayTwo: [0])
+summationOfLinkedLists(linkedArrayOne: [9,9,9,9,9,9,9], linkedArrayTwo: [9,9,9,9])
 
  
 // __________________________________ //
