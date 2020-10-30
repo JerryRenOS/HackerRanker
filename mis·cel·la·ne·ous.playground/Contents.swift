@@ -4,7 +4,16 @@ import XCTest
 // A constantly evolving mis·cel·la·ne·ous collection in-progress //
 
 // __________________________________ //
-// Oct 27th 2020
+// Oct 27th / Oct 30th
+// Extensions that come in handy
+
+extension StringProtocol {
+    subscript(offsetNumb: Int) -> Character {  //this extension would allow me to subscript a string like this "tairengan"[3]  haha //
+        self[index(startIndex, offsetBy: offsetNumb)]
+    }
+}               
+print("tairengan"[3])
+
 extension String {
     func removingAllTheWhiteSpaces() -> String {
         return components(separatedBy: .whitespaces).joined()
