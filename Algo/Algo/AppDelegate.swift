@@ -11,10 +11,29 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    let queueForThreadTrouble = DispatchQueue(label: "queueForThreadTrouble")         
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+       
+//        var imageryies = [String]()
+//        var mutatingCount = 0
+//
+//        queueForThreadTrouble.async { // this async purposely crashes the app hah
+//            for _ in 0...1001 {
+//                imageryies.append("ImageQueueOne")
+//                mutatingCount += 1
+//            }
+//        }
+//        for _ in 0...1001 {
+//            imageryies.append("ImageMainThread") // fatal-erroed hahaha, good sh*t
+//            mutatingCount += 1
+//        }
+//
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1.3) {
+//            print("Mutating count is  ", mutatingCount)
+//            print("Imagery count is:  ", imageryies.count )
+//        }
+
         return true
     }
 
