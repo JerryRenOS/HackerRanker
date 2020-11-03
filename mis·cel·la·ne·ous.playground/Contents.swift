@@ -2,7 +2,17 @@ import Foundation
 import UIKit
 import XCTest
 // A constantly evolving mis·cel·la·ne·ous collection in-progress //
+   
 
+// ________________________
+// Nov 2nd
+// one-liner for counting occurrences of unique elements in an array
+var ar: [Int]?
+var dict: [Int : Int] = [:]
+ar?.forEach { dict[$0, default: 0] += 1 }
+// comes in handy so frickin' much honestly
+
+             
 // __________________________________ //
 // Oct 27th / Oct 30th
 // Extensions that come in handy
