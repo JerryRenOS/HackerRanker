@@ -28,12 +28,11 @@ struct Stack<Element: Equatable>: Equatable  {
     
     var storage: [Element] = []
     
-    init() { }
+//    init() { }
     
-    init(_ elements: [Element]){
-        storage = elements 
-    }
-    
+//    init(_ elements: [Element]){
+//        storage = elements 
+//    }
     
     func peek() -> Element? {
         return storage.last

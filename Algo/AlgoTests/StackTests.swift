@@ -35,7 +35,8 @@ final class StackTests: XCTestCase {
     
     func test_init() {
         let arlist = [1, 2]
-        XCTAssertEqual(stack, Stack(arlist))
+        XCTAssertEqual(stack, Stack(storage: arlist))
+ //       XCTAssertEqual(stack, Stack(arlist))
     }
 
 }
