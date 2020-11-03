@@ -6,7 +6,7 @@ import XCTest
 
 // ________________________
 // Nov 2nd
-// one-liner for counting occurrences of unique elements in an array
+// One-liner for counting occurrences of unique elements in an array
 var ar: [Int]?
 var dict: [Int : Int] = [:]
 ar?.forEach { dict[$0, default: 0] += 1 }
@@ -47,6 +47,49 @@ func gettingIndexInAString(targetString: String, index:Int) -> String {
     print(toBeReturned)
     return String(toBeReturned)
 }
+
+// __________________________________ //
+// Nov 2nd
+// Counting the number of palindromes in a string
+
+func palindromaCounta(targetStr: String) -> Int {
+    let leng = targetStr.count
+    let strArr = Array(targetStr)
+    var palinCounter = 0
+    for x in 0...leng - 1 {
+        for y in 1...leng {
+            if x < y {
+                let currentSlice = (strArr[x..<y]).map(String.init) //妙手回春的conversion
+                if checkingForPalinArr(targetArr: currentSlice) {
+                    print(currentSlice)
+                    palinCounter += 1
+                }
+            }
+        }
+    }
+    return palinCounter
+}
+// map(String.init)太妙了
+
+fileprivate func checkingForPalinArr(targetArr: Array<String>) -> Bool { // helper to check if an array of strings is a palindrome or not
+    var trueOrFalse = true
+    let leng = targetArr.count
+    var leftIndex = 0
+    
+    while leftIndex < leng / 2 {
+        let rightIndex = leng - leftIndex - 1
+        if targetArr[leftIndex] != targetArr[rightIndex] {
+            return false
+        }
+        leftIndex += 1
+    }
+    return true
+}
+
+let tac = "tacoocat"
+print(checkingForPalinArr(targetArr: Array(arrayLiteral: tac)))
+print(palindromaCounta(targetStr: tac))
+
 
 // __________________________________ //
 // Oct 28th 2020
