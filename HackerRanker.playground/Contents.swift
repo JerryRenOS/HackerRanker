@@ -103,7 +103,22 @@ import UIKit
 //    return gemCount
 //}
 
+// MARK: - Sock Merchant with forEach one-liner
 
+// func sockMerchant(n: Int, ar: [Int]) -> Int {
+//    var pairs = 0
+//    var dict: [Int : Int] = [:]
+//    ar.forEach { dict[$0, default: 0] += 1 }
+//
+//    for count in dict.values {
+//        let pair = Int(count / 2)
+//        pairs += pair
+//    }
+//    return pairs
+//}
+//sockMerchant(n: 9, ar: [3, 5, 3, 6, 6, 6, 7, 3, 3])
+//
+//
 // MARK: - Repeated String (super simple)
 //func repeatedString(s: String, n: Int) -> Int {
 //
@@ -1519,3 +1534,7 @@ import UIKit
 //}
 //print(binarySearch(searchValue: 18, array: numbersForTestings))
 
+
+//let str = "qifaiqspp"
+//let arrFromStr = str.components(separatedBy: "")
+//print(arrFromStr)
