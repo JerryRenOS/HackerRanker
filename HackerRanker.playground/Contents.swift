@@ -1468,6 +1468,22 @@ import UIKit
 //// how to get the index of all the same string in the array
 
 
+// MARK: - Super easy challenge from the sorting category
+
+//func maximumToys( prices: [Int], k: Int) -> Int {
+//    var sortedPrices = prices.sorted()
+//    var summed = 0
+//    var counter = 0
+//    while summed <= k {
+//        summed += sortedPrices[counter]
+//        counter += 1
+//    }
+//    return counter - 1
+//}
+//maximumToys(prices: [1, 12, 5, 111, 200, 1000, 10], k: 50)
+//
+// ______________________________________________
+
 
 // https://stackoverflow.com/questions/24028860/how-to-find-index-of-list-item-in-swift
 

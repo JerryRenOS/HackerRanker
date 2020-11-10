@@ -49,7 +49,7 @@ func gettingIndexInAString(targetString: String, index:Int) -> String {
 }
 
 // __________________________________ //
-// Nov 2nd
+// Nov 3rd
 // Counting the number of palindromes in a string
 
 func palindromaCounta(targetStr: String) -> Int {
