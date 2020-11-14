@@ -1554,3 +1554,37 @@ import UIKit
 //let str = "qifaiqspp"
 //let arrFromStr = str.components(separatedBy: "")
 //print(arrFromStr)
+
+
+
+// MARK: - Average over nearest neighbors
+
+//private func nearestNeighbors(originalList: [Double]) -> [Double] {
+//
+//    let lenOfList = originalList.count
+//    var resultList: Array<Double>
+//
+//    switch lenOfList {
+//    case 0, 1:
+//        return originalList
+//    case 2:
+//        let avg = (originalList[0] + originalList[1]) / 2
+//        return [avg, avg]
+//    default:
+//        let firstElement = (originalList[0] + originalList[1]) / 2
+//        resultList = [firstElement]
+//
+//        for index in 1...lenOfList-2 {
+//            let sum = originalList[index-1] + originalList[index] + originalList[index + 1]
+//            resultList.append(sum/3)
+//        }
+//        let lastElement = (originalList[lenOfList-2] + originalList[lenOfList-1]) / 2
+//        resultList.append(lastElement)
+//        print(resultList)
+//        return resultList
+//    }
+//}
+//
+//nearestNeighbors(originalList: [1.0, 2.0, 3, 4, 5])
+//nearestNeighbors(originalList: [3.7, 7.3])
+//nearestNeighbors(originalList: [11.011])
