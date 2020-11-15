@@ -1588,3 +1588,32 @@ import UIKit
 //nearestNeighbors(originalList: [1.0, 2.0, 3, 4, 5])
 //nearestNeighbors(originalList: [3.7, 7.3])
 //nearestNeighbors(originalList: [11.011])
+
+
+// MARK: - Create a fruit class returning the required output
+    
+//final class FruitDataClass {
+//    let fruitName: String
+//    let fruitCount: Int
+//
+//    init(_ fruitName: String, _ fruitCount: Int) {
+//        self.fruitName = fruitName
+//        self.fruitCount = fruitCount
+//    }
+//
+//    func makeFruitList() -> [String] {
+//        var fruitList: Array<String> = []
+//        for index in 0..<fruitCount {
+//            fruitList.append(fruitName)
+//        }
+//        return fruitList
+//    }}
+//
+//private func listOf(listOfFruits: [FruitDataClass]) -> [String] {
+//    return listOfFruits.flatMap {$0.makeFruitList()}
+//}
+//
+//listOf(listOfFruits: [FruitDataClass("Coconut", 3), FruitDataClass("Pineapple", 2)])
+
+
+

@@ -50,6 +50,33 @@ func gettingIndexInAString(targetString: String, index:Int) -> String {
 }
 
 // __________________________________ //
+// Nov 14th -
+// Create a fruit class returning the required output
+    
+final class FruitDataClass {
+    let fruitName: String
+    let fruitCount: Int
+    
+    init(_ fruitName: String, _ fruitCount: Int) {
+        self.fruitName = fruitName
+        self.fruitCount = fruitCount
+    }
+    
+    func makeFruitList() -> [String] {
+        var fruitList: Array<String> = []
+        for index in 0..<fruitCount {
+            fruitList.append(fruitName)
+        }
+        return fruitList
+    }}
+
+private func listOf(listOfFruits: [FruitDataClass]) -> [String] {
+    return listOfFruits.flatMap {$0.makeFruitList()}
+}
+
+listOf(listOfFruits: [FruitDataClass("Coconut", 3), FruitDataClass("Pineapple", 2)])
+
+// __________________________________ //
 // Nov 3rd
 // Counting the number of palindromes in a string
 
