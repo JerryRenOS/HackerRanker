@@ -1614,6 +1614,97 @@ import UIKit
 //}
 //
 //listOf(listOfFruits: [FruitDataClass("Coconut", 3), FruitDataClass("Pineapple", 2)])
+    
+   
 
+// MARK: - Reversing the string without moving speical characters
+// Nov 17th
+// My two drastically different solutions for reversing the string with the special characters in place
 
+// Approach 1 is harder to conceive but my fav, and used a bit of indo-onnanoko's help
+fileprivate func reversingStringBarringSpecialChars(originalStr: String) -> String {
+    
+    let azRange = 97...122
+    let AZrange = 65...90
+    var newStr = String.init()
+    
+    let originalArr = Array(originalStr)
+    var filteredArr: [String] = []
+    var specialCharDict: [Int:String] = [:]
+    
+    for (index, element) in originalArr.enumerated() {
+        let asciiVal = Int(element.asciiValue ?? 0)
+        let elementString = String(element)
+        
+        if azRange.contains(asciiVal) || AZrange.contains(asciiVal) {
+            filteredArr.append(elementString)
+        }
+        else {
+            specialCharDict.updateValue(elementString, forKey: index)
+        }
+    }
+    filteredArr.reverse()
 
+    let sortedCharDict = specialCharDict.sorted { (first, second) -> Bool in
+        return first.key < second.key
+    }
+    
+    let diff = originalArr.count - filteredArr.count
+    for index in 0..<diff {
+        filteredArr.append("")
+    }
+    for (index, specialchar) in sortedCharDict {
+       filteredArr.insert(specialchar, at: index)
+    }
+    newStr = filteredArr.joined(separator: "")
+    print(newStr)
+    return newStr
+}
+
+let preStr1 = "Ab,c,de!$"
+// "ed,c,bA!$"
+reversingStringBarringSpecialChars(originalStr: preStr1)
+
+let preStr2 = "a,b$c"
+// "c,b$a"
+reversingStringBarringSpecialChars(originalStr: preStr2)
+
+//// ___________________________________________________________
+//// Approach 2 - a more standard method with swaps
+//
+//private func confirmedAsLatinAlphabetLetter(targetStr: String) -> Bool {  // helper to check if an element belongs to
+//        let azRangeAscii = 97...122
+//        let AZrangeAscii = 65...90
+//        let targetChar = Character(targetStr)
+//        let asciiVal = Int(targetChar.asciiValue ?? 0)
+//        return azRangeAscii.contains(asciiVal) || AZrangeAscii.contains(asciiVal)
+//}
+//
+//func reversalBySwap(originalStr: String) -> String {
+//    var newStr = String.init()
+//    var originalArr = Array(originalStr)
+//    var leftMost = 0
+//    var rightMost = originalArr.count - 1
+//
+//    while rightMost > leftMost {
+//        let leftElement = String(originalArr[leftMost])
+//        let rightElement = String(originalArr[rightMost])
+//        if !confirmedAsLatinAlphabetLetter(targetStr: leftElement) {
+//            leftMost += 1
+//        } else if !confirmedAsLatinAlphabetLetter(targetStr: rightElement) {
+//            rightMost -= 1
+//        } else {
+//            originalArr.swapAt(rightMost, leftMost)
+//            rightMost -= 1
+//            leftMost += 1
+//        }
+//    }
+//    newStr = String(originalArr)
+//    return newStr
+//}
+//
+//let orig = "Ab,c,de!$"
+//let end = "ed,c,bA!$"
+//print(reversalBySwap(originalStr: orig))
+
+// _____________________________________________
