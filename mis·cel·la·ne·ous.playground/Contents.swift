@@ -5,7 +5,34 @@ import XCTest
 
 
 
-// ________________________
+// ________________________________________-
+// Nov 17th sudden realization
+// Darn it, doing this transformation for almost a year now smh, can just do a one liner)
+
+let originalStr = "hahaha, deprecated func below"
+
+//func stringIntoArr(preTransformed: String) -> Array<String> {
+//    var tempaArr: [String] = []
+//    for element in preTransformed {
+//        tempaArr.append(String(element))
+//    }
+//    return tempaArr
+//}
+// print(stringIntoArr(preTransformed: originalStr))
+
+let originalArrFromString = Array(originalStr) // one-liner smh
+print(originalArrFromString)
+
+// Enumerated( ) is pretty powerful too, and can be used in conjunction with dict (below)
+
+var dictFromArr: [Int:String] = [:]
+for (index, element) in originalArrFromString.enumerated() {
+    dictFromArr.updateValue(String(element), forKey: index)
+}
+print(dictFromArr)
+
+
+// ___________________________________________________________________
 // Nov 2nd
 // One-liner for counting occurrences of unique elements in an array
 var ar: [Int]?
@@ -13,8 +40,7 @@ var dict: [Int : Int] = [:]
 ar?.forEach { dict[$0, default: 0] += 1 }
 // comes in handy so frickin' much honestly
 
-             
-// __________________________________ //
+// _____________________________________________________________//
 // Oct 27th / Oct 30th
 // Extensions that come in handy
 
@@ -29,14 +55,6 @@ extension String {
     func removingAllTheWhiteSpaces() -> String {
         return components(separatedBy: .whitespaces).joined()
     }
-}
-
-func stringIntoArr(preTransformed: String) -> Array<String> {
-    var tempaArr: [String] = []
-    for element in preTransformed {
-        tempaArr.append(String(element))
-    }
-    return tempaArr
 }
 
 func gettingIndexInAString(targetString: String, index:Int) -> String {
@@ -445,7 +463,6 @@ class LinkedNode {
         self.nextNode = nextNode
     }
 }
-
 class OneDirectionLinkedList {
     var initialNode: LinkedNode?
     
@@ -457,9 +474,99 @@ class OneDirectionLinkedList {
         }
     }
 }
-
 let secondNode = LinkedNode(nextNode: nil, val: 36)
 let initalNode = LinkedNode(nextNode: secondNode, val: 33)
 OneDirectionLinkedList().printingLinkedList(initialNode: initalNode)
+          
 
+// __________________________________________________ //
+// Nov 17th
+// My two drastically different solutions for reversing the string with the special characters in place
 
+// Approach 1 is harder to conceive but my fav, and used a bit of indo-onnanoko's help
+fileprivate func reversingStringBarringSpecialChars(originalStr: String) -> String {
+    
+    let azRange = 97...122
+    let AZrange = 65...90
+    var newStr = String.init()
+    
+    let originalArr = Array(originalStr)
+    var filteredArr: [String] = []
+    var specialCharDict: [Int:String] = [:]
+    
+    for (index, element) in originalArr.enumerated() {
+        let asciiVal = Int(element.asciiValue ?? 0)
+        let elementString = String(element)
+        
+        if azRange.contains(asciiVal) || AZrange.contains(asciiVal) {
+            filteredArr.append(elementString)
+        }
+        else {
+            specialCharDict.updateValue(elementString, forKey: index)
+        }
+    }
+    filteredArr.reverse()
+
+    let sortedCharDict = specialCharDict.sorted { (first, second) -> Bool in
+        return first.key < second.key
+    }
+    
+    let diff = originalArr.count - filteredArr.count
+    for index in 0..<diff {
+        filteredArr.append("")
+    }
+    for (index, specialchar) in sortedCharDict {
+       filteredArr.insert(specialchar, at: index)
+    }
+    newStr = filteredArr.joined(separator: "")
+    print(newStr)
+    return newStr
+}
+
+let preStr1 = "Ab,c,de!$"
+// "ed,c,bA!$"
+reversingStringBarringSpecialChars(originalStr: preStr1)
+
+let preStr2 = "a,b$c"
+// "c,b$a"
+reversingStringBarringSpecialChars(originalStr: preStr2)
+
+// _______________________________________________________
+// Approach 2 - a more standard method with swaps
+
+private func confirmedAsLatinAlphabetLetter(targetStr: String) -> Bool {  // helper to check if an element belongs to
+        let azRangeAscii = 97...122
+        let AZrangeAscii = 65...90
+        let targetChar = Character(targetStr)
+        let asciiVal = Int(targetChar.asciiValue ?? 0)
+        return azRangeAscii.contains(asciiVal) || AZrangeAscii.contains(asciiVal)
+}
+
+func reversalBySwap(originalStr: String) -> String {
+    var newStr = String.init()
+    var originalArr = Array(originalStr)
+    var leftMost = 0
+    var rightMost = originalArr.count - 1
+    
+    while rightMost > leftMost {
+        let leftElement = String(originalArr[leftMost])
+        let rightElement = String(originalArr[rightMost])
+        if !confirmedAsLatinAlphabetLetter(targetStr: leftElement) {
+            leftMost += 1
+        } else if !confirmedAsLatinAlphabetLetter(targetStr: rightElement) {
+            rightMost -= 1
+        } else {
+            originalArr.swapAt(rightMost, leftMost)
+            rightMost -= 1
+            leftMost += 1
+        }
+    }
+    newStr = String(originalArr)
+    return newStr
+}
+
+let orig = "Ab,c,de!$"
+let end = "ed,c,bA!$"
+print(reversalBySwap(originalStr: orig))
+
+// _____________________________________________
