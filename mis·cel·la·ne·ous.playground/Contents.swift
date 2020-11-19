@@ -2,10 +2,20 @@ import Foundation
 import UIKit
 import XCTest
 // A constantly evolving mis·cel·la·ne·ous collection in-progress //
+               
+
+// _____________________________________________
+// Nov 17th
+// Sorting dictionary by key - definitely useful
+
+var dictNotsorted = [7: "π", 5: "£", 3: "ø", 6: "ƒ"]
+let dictSorted  =  dictNotsorted.sorted { (first, second) -> Bool in
+    return first.key < second.key
+}
+print(dictSorted)
 
 
-
-// ________________________________________-
+// ________________________________________
 // Nov 17th sudden realization
 // Darn it, doing this transformation for almost a year now smh, can just do a one liner)
 
@@ -570,3 +580,12 @@ let end = "ed,c,bA!$"
 print(reversalBySwap(originalStr: orig))
 
 // _____________________________________________
+// Nov 18th
+// writing this protocol out helps me thoroughly understand the string dataType
+protocol ConstructingStringProtocol: StringProtocol
+where Self.Element == Character, Self.Index == String.Index,
+      Self.StringInterpolation == DefaultStringInterpolation,
+      Self.SubSequence: StringProtocol { }
+
+ 
+           
