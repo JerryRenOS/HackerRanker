@@ -19,7 +19,7 @@ print(dictSorted)
 // Nov 17th sudden realization
 // Darn it, doing this transformation for almost a year now smh, can just do a one liner)
 
-let originalStr = "hahaha, deprecated func below"
+let originalStr = "hahaha,deprecated func below"
 
 //func stringIntoArr(preTransformed: String) -> Array<String> {
 //    var tempaArr: [String] = []
@@ -39,9 +39,13 @@ var dictFromArr: [Int:String] = [:]
 for (index, element) in originalArrFromString.enumerated() {
     dictFromArr.updateValue(String(element), forKey: index)
 }
-print(dictFromArr)
+print("dictFromArr is: ", dictFromArr)
 
+let dictFromArrSorted = dictFromArr.sorted { $0.value > $1.value }
+// slightly different syntax than above, but achieving the sort as well haha
+print(dictFromArrSorted)
 
+   
 // ___________________________________________________________________
 // Nov 2nd
 // One-liner for counting occurrences of unique elements in an array
@@ -312,8 +316,9 @@ class BineSearchTree {
 // Oct 26th
 // Coding challenge
 
-fileprivate func Average(arr: [Double]) -> [Double] {
-    
+fileprivate func Average(arr: [Double]?) -> [Double] {
+    guard let arr = arr else { return [Double].init()}
+         
     if arr.count == 0 {
         return []
     } else if arr.count == 1 {
@@ -587,5 +592,129 @@ where Self.Element == Character, Self.Index == String.Index,
       Self.StringInterpolation == DefaultStringInterpolation,
       Self.SubSequence: StringProtocol { }
 
- 
-           
+
+// _____________________________________________
+// Nov 20th
+// MARK: - Contacts searcher
+
+private func contactsSearcher(arrOfNames: [String], arrOfPhoneNumbers: [String], searchString: String) -> String? {
+    var matchingIndexes = Array<Int>.init()
+    var matchesNames = [String].init()
+    
+    for( index, phoneNumber) in arrOfPhoneNumbers.enumerated() {
+        switch phoneNumber.contains(searchString) {
+        case true:
+            matchingIndexes.append(index)
+        default:
+            ()
+        }
+    }
+    matchesNames = matchingIndexes.map { arrOfNames[$0] } // filtering the array based on indexes
+
+    let namesSorted = matchesNames.sorted(by: <)
+    guard let contactFound = namesSorted.first else { return "nobody"}
+    print("Contact found is: \(contactFound)")
+    return contactFound
+}
+        
+contactsSearcher(arrOfNames: ["pom", "pim"], arrOfPhoneNumbers: ["13240", "32410"], searchString: "324")
+contactsSearcher(arrOfNames: ["sander", "ann", "amy", "michael"], arrOfPhoneNumbers: ["123", "234", "345", "456"], searchString: "3")
+
+
+// MARK: - Minimum number of coins flipped
+
+// Approach 1, more concise
+    
+private func coinFlippingConcise(arrOfCoins: [Int]) -> Int {
+    
+    guard !arrOfCoins.isEmpty else { return 0 }
+    var numOfFlips: Int = 0
+    let leng = arrOfCoins.count
+
+    var alternatingArr: Array<Int> = []
+    for index in 0...leng-1 {
+        switch index%2 {
+        case 0:
+            alternatingArr.append(0)
+        default:
+            alternatingArr.append(1)
+        }
+    }
+    for index in 0...leng-1 {
+        let coinElement = arrOfCoins[index], alternatingElement = alternatingArr[index]
+        switch coinElement == alternatingElement {
+        case true:
+            break
+        default:
+            numOfFlips += 1
+        }
+    }
+    return min(numOfFlips, leng-numOfFlips)
+}
+
+//___________________________
+// Approach 2, more verbose
+private func coinFlippingVerbose(arrOfCoins: [Int]) -> Int {
+    
+    guard !arrOfCoins.isEmpty else { return 0 }
+    var numOfFlipsOne: Int = 0
+    var numOfFlipsTwo: Int = 0
+    let leng = arrOfCoins.count
+
+    var alternatingArrOne: Array<Int> = []
+    for index in 0...leng-1 {
+        switch index%2 {
+        case 0:
+            alternatingArrOne.append(0)
+        default:
+            alternatingArrOne.append(1)
+        }
+    }
+             
+    var alternatingArrTwo = alternatingArrOne
+    alternatingArrTwo.removeFirst(1)
+    switch alternatingArrOne.last {
+    case 0:
+        alternatingArrTwo.append(1)
+    default:
+        alternatingArrTwo.append(0)
+    }
+    
+    for index in 0...leng-1 {
+        let currentElement = arrOfCoins[index]
+        switch alternatingArrTwo[index] == currentElement{
+        case false:
+            numOfFlipsTwo += 1
+        case true:
+            break
+        }
+        switch alternatingArrOne[index] == currentElement {
+        case true:
+            break
+        default:
+            numOfFlipsOne += 1
+        }
+    }
+    return min(numOfFlipsTwo, numOfFlipsOne)
+}
+
+let arr0: Array<Int> = []
+let arr1 = [1]
+let arr2 = [1, 0]
+let arr3 = [0 , 1, 1, 0]
+let arr4 = [1, 1, 0, 1, 1]
+let arr5 = [1, 0, 1, 0, 1, 1]
+
+coinFlippingVerbose(arrOfCoins: arr0)
+coinFlippingVerbose(arrOfCoins: arr1)
+coinFlippingVerbose(arrOfCoins: arr2)
+coinFlippingVerbose(arrOfCoins: arr3)
+coinFlippingVerbose(arrOfCoins: arr4)
+coinFlippingVerbose(arrOfCoins: arr5)
+
+coinFlippingConcise(arrOfCoins: arr0)
+coinFlippingConcise(arrOfCoins: arr1)
+coinFlippingConcise(arrOfCoins: arr2)
+coinFlippingConcise(arrOfCoins: arr3)
+coinFlippingConcise(arrOfCoins: arr4)
+coinFlippingConcise(arrOfCoins: arr5)
