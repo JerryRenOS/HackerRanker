@@ -718,3 +718,59 @@ coinFlippingConcise(arrOfCoins: arr2)
 coinFlippingConcise(arrOfCoins: arr3)
 coinFlippingConcise(arrOfCoins: arr4)
 coinFlippingConcise(arrOfCoins: arr5)
+ 
+
+// MARK: - Balanced fragments
+// Nov 21st
+// 暴力 approach, しかし can't conceive of a better solution as of now.
+private func balancedFragments(targetString: String) -> Int {
+    
+    let targetArr = Array(targetString)
+    let leng = targetArr.count
+    var fragmentLengthArr = Array<Int>.init()
+              
+    var indexA = 1
+//    var breakIt = false
+    while indexA <= leng {                  // breakIt != true
+        for indexB in 0...leng-indexA {
+            
+            var setUpper: Set = Set<Character>.init()
+            var setLower: Set<String.Element> = Set.init()
+            
+            let subArr = targetArr[indexB..<(indexB+indexA)]
+            
+            for element in subArr {
+                switch element.isUppercase {
+                case false:
+                    setLower.insert(element)
+                default:
+                    setUpper.insert(element)
+                }
+            }
+            var setUpperToLower = Set<Character>()
+
+            setUpper.forEach { setUpperToLower.insert(Character($0.lowercased())) }
+            
+            switch setUpperToLower == setLower {
+            case true:
+                 fragmentLengthArr.append(indexA)
+                print(String(subArr))
+//                breakIt = !breakIt   //对于Big(o)蛮重要的一行
+                return indexA
+            default:
+                break
+            }
+        }
+        indexA += 1
+    }
+    print(fragmentLengthArr)
+
+    return -1
+    // fragmentLengthArr.isEmpty ? -1 : (fragmentLengthArr.min() ?? -1)
+}
+
+balancedFragments(targetString: "AcZCbaBz")
+balancedFragments(targetString: "azABaabaza")
+balancedFragments(targetString: "TacoCat")
+balancedFragments(targetString: "aZABcabbCa")
+balancedFragments(targetString: "kzkZkzK")
