@@ -722,15 +722,16 @@ coinFlippingConcise(arrOfCoins: arr5)
 
 // MARK: - Balanced fragments
 // Nov 21st
-// 暴力 approach, しかし can't conceive of a better solution as of now.
+    
+// 微暴力 approach & 非暴力 approach
 private func balancedFragments(targetString: String) -> Int {
     
     let targetArr = Array(targetString)
     let leng = targetArr.count
     var fragmentLengthArr = Array<Int>.init()
-              
+    
     var indexA = 1
-//    var breakIt = false
+    //    var breakIt = false
     while indexA <= leng {                  // breakIt != true
         for indexB in 0...leng-indexA {
             
@@ -747,30 +748,48 @@ private func balancedFragments(targetString: String) -> Int {
                     setUpper.insert(element)
                 }
             }
-            var setUpperToLower = Set<Character>()
-
-            setUpper.forEach { setUpperToLower.insert(Character($0.lowercased())) }
             
-            switch setUpperToLower == setLower {
-            case true:
-                 fragmentLengthArr.append(indexA)
-                print(String(subArr))
-//                breakIt = !breakIt   //对于Big(o)蛮重要的一行
-                return indexA
-            default:
-                break
+            if setUpper.count == setLower.count {
+                var upperAsciiCumulated = 0
+                var lowerAsciiCumulated = 0
+                
+                setLower.forEach { lowerAsciiCumulated += Int($0.asciiValue ?? 0) }
+                for char in setUpper {
+                    upperAsciiCumulated += Int(char.asciiValue ?? 0)
+                }
+                let diff = lowerAsciiCumulated - upperAsciiCumulated
+                
+                switch diff%32 {
+                case 0:
+                    let subStr = subArr.map {String.init($0)}.reduce("") {$0 + $1}
+                    print(subStr)
+                    return indexA
+                default:
+                    break
+                }
             }
+            
+            //___________________________________________________
+            // Initial approach, but relatively slower (by a lot haha)
+            
+            //            var setUpperToLower = Set<Character>()
+            //            setUpper.forEach { setUpperToLower.insert(Character($0.lowercased())) }
+            //            switch setUpperToLower == setLower {
+            //            case true:
+            //                 fragmentLengthArr.append(indexA)
+            //                print(String(subArr))
+            ////                breakIt = !breakIt   //对于Big(o)蛮重要的一行
+            //                return indexA
+            //            default:
+            //                break
+            //            }
+            //________________________________________________
+            
         }
         indexA += 1
     }
-    print(fragmentLengthArr)
-
+    
     return -1
     // fragmentLengthArr.isEmpty ? -1 : (fragmentLengthArr.min() ?? -1)
 }
 
-balancedFragments(targetString: "AcZCbaBz")
-balancedFragments(targetString: "azABaabaza")
-balancedFragments(targetString: "TacoCat")
-balancedFragments(targetString: "aZABcabbCa")
-balancedFragments(targetString: "kzkZkzK")
