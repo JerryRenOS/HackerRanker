@@ -23,6 +23,18 @@ class SorsationViewController: UIViewController {
 }
 
 
+private func genericInsertionality<T: Comparable>(unsorted: [T], by comparison: (T, T) -> Bool) -> [T] {
+    var unsorted = unsorted
+    
+    for q in 0..<unsorted.count {
+        
+        
+    }
+    return Array<T>.init()
+}
+
+
+
 func insertionality(unsorted: inout[Int]) -> [Int] {
     
     guard unsorted.count > 1 else { return unsorted }
