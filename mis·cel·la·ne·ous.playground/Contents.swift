@@ -384,6 +384,21 @@ class KVCProfile: NSObject {
     }
 }
 // the above code is erroneous dunno why
+    
+// MARK: - Nov 23rd
+// Async illustrator simplistic 
+
+let randDispatchTime = (.now() + Double.random(in: 1.0...5.0)) as DispatchTime
+// no idea why I had to cast these two as dispatchtime, but it works haha.
+let anotherArbituaryDispatchTime = (.now() + Double.random(in: 1.0...5.0)) as DispatchTime
+var numb: Double = 0.33
+DispatchQueue.main.asyncAfter(deadline: randDispatchTime) {
+    numb += 0.33
+}
+DispatchQueue.main.asyncAfter(deadline: anotherArbituaryDispatchTime) {
+    print(numb)
+}
+
 
 
 // __________________________________ //
