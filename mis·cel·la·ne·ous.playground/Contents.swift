@@ -788,7 +788,6 @@ private func balancedFragments(targetString: String) -> Int {
                     break
                 }
             }
-            
             //___________________________________________________
             // Initial approach, but relatively slower (by a lot haha)
             
@@ -804,7 +803,6 @@ private func balancedFragments(targetString: String) -> Int {
             //                break
             //            }
             //________________________________________________
-            
         }
         indexA += 1
     }
@@ -812,4 +810,46 @@ private func balancedFragments(targetString: String) -> Int {
     return -1
     // fragmentLengthArr.isEmpty ? -1 : (fragmentLengthArr.min() ?? -1)
 }
+
+
+
+// Nov 17th (redoing 陈旧 hackerrank)
+// MARK: - Number of letters to strip off in order to make an anagram
+
+func makeAnagram(a: String, b: String) -> Int {
+    var numOfDeletions = 0
+    var dictA: [String : Int] = [:]
+    var dictB: [String:Int] = [:]
+    
+    for q in a {
+        if let qq = dictA[String(q)] {
+            dictA.updateValue(qq+1, forKey: String(q))
+        } else {
+            dictA.updateValue(1, forKey: String(q))
+        }
+    }
+    for q in b {
+        if let qq = dictB[String(q)] {
+            dictB.updateValue(qq+1, forKey: String(q))
+        } else {
+            dictB.updateValue(1, forKey: String(q))
+        }
+    }
+    for (keyB, valueB) in dictB {
+        if dictA.keys.contains(keyB) {
+            numOfDeletions += abs(valueB - (dictA[keyB] ?? 0))
+        } else if false==dictA.keys.contains(keyB) {
+            numOfDeletions += valueB
+        }
+    }
+    for (keyA, valueA) in dictA {
+        if !dictB.keys.contains(keyA) {
+            numOfDeletions += valueA
+        }
+    }
+    return numOfDeletions
+}
+
+print(makeAnagram(a: "cde", b: "abc"))
+
 
