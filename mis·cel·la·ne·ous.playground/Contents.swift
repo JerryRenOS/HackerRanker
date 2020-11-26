@@ -109,7 +109,7 @@ private func listOf(listOfFruits: [FruitDataClass]) -> [String] {
 listOf(listOfFruits: [FruitDataClass("Coconut", 3), FruitDataClass("Pineapple", 2)])
 
 // __________________________________ //
-// Nov 3rd
+// Nov 3rd tackled & (Nov 25th revisitation)
 // Counting the number of palindromes in a string
 
 func palindromaCounta(targetStr: String) -> Int {
@@ -150,6 +150,11 @@ let tac = "tacoocat"
 print(checkingForPalinArr(targetArr: Array(arrayLiteral: tac)))
 print(palindromaCounta(targetStr: tac))
 
+let potentialPalin = "igBufQfobGi"
+print(checkingForPalinArr(targetArr: Array(arrayLiteral: potentialPalin)))
+print(palindromaCounta(targetStr: potentialPalin))
+
+ 
 
 // __________________________________ //
 // Oct 28th 2020
