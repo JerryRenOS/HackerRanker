@@ -853,3 +853,48 @@ func makeAnagram(a: String, b: String) -> Int {
 print(makeAnagram(a: "cde", b: "abc"))
 
 
+// Nov 17th (redoing 陈旧 hackerrank)
+// MARK: - Funny String
+
+func funnyString(s: String) -> String {
+    var funnyOrNot = "Not Funny"
+    var sArray = [String].init()
+
+    for character in s {
+        sArray.append(String(character))
+    }
+    var reversedSArray = Array<String>.init()
+    var reversedS = String.init()
+ 
+    var index = s.count - 1
+    while index >= 0 {
+        reversedSArray.append(sArray[index])
+        index -= 1
+    }
+    var reversedAscii = [Int].init()
+    var originalAscii: [Int] = []
+
+    for index in 0...(reversedSArray.count-1) {
+        reversedAscii.append(Int(Character(reversedSArray[index]).asciiValue!))
+        originalAscii.append(Int(Character(sArray[index]).asciiValue!))
+    }
+    var originalDifference = [Int].init()
+    var reversedDifference = Array<Int>.init()
+
+    for index in 0...(reversedAscii.count-2) {
+        let absoluteDiffR = abs(reversedAscii[index] - reversedAscii[index+1])
+        let absoluteDiffO = abs(originalAscii[index+1] - originalAscii[index])
+        reversedDifference.append(absoluteDiffR)
+        originalDifference.append(absoluteDiffO)
+    }
+    if reversedDifference == originalDifference {
+        funnyOrNot = "Funny"
+    }
+    return funnyOrNot
+}
+
+print(funnyString(s: "niubaracaca"))
+for charac in "abcdefghijklmnopqrstuvwxyz" {
+    print(Character(String(charac)).asciiValue!)
+}
+
