@@ -917,5 +917,29 @@ func squareTwo<T: FloatingPoint>(_ value: T) -> T {
 print(squareTwo(5))
 
 
+let string: String = String(describing: String.self)
+print(string)
 
-  
+enum Planet: Int {
+    case Mercury = 1
+    case Venus
+    case Earth
+    case Mars
+}
+
+let testa = Planet(rawValue: 3)
+
+let names = ["Pilot": "Wash", "Doctor": "Simon"]
+for (key, value) in names.enumerated() {
+    let testVar = value
+    print(testVar)
+}
+
+let testaraay = [9, 7, 6, 3, 1]
+let testaraay2 = [9, 7, 6, 3, 1]
+
+let zipped = zip(testaraay, testaraay2)
+print(zipped)
+
+
+
