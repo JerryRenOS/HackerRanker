@@ -897,4 +897,25 @@ print(funnyString(s: "niubaracaca"))
 for charac in "abcdefghijklmnopqrstuvwxyz" {
     print(Character(String(charac)).asciiValue!)
 }
+ 
+// MARK: - Babe Hack (hackingwithswift)  ~ Nov 17th
 
+var firstArr = [1, 2, 3]
+var secondArr = ["one", "two", "three"]
+var zippedArr = Array(zip(secondArr, firstArr))
+print(zippedArr)
+
+
+func squareOne<T: BinaryInteger>(_ value: T) -> T {
+    return value * value
+}
+print(squareOne(5))
+
+func squareTwo<T: FloatingPoint>(_ value: T) -> T {
+    return value * value
+}
+print(squareTwo(5))
+
+
+
+  
