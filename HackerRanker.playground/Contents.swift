@@ -1836,3 +1836,50 @@ private func coinFlippingVerbose(arrOfCoins: [Int]) -> Int {
 //coinFlippingConcise(arrOfCoins: arr4)
 //coinFlippingConcise(arrOfCoins: arr5)
 
+
+
+//
+//// MARK: - Babe Hack (hackingwithswift)  ~ Nov 17th
+//
+//var firstArr = [1, 2, 3]
+//var secondArr = ["one", "two", "three"]
+//var zippedArr = Array(zip(secondArr, firstArr))
+//print(zippedArr)
+//
+//
+//func squareOne<T: BinaryInteger>(_ value: T) -> T {
+//   return value * value
+//}
+//print(squareOne(5))
+//
+//func squareTwo<T: FloatingPoint>(_ value: T) -> T {
+//   return value * value
+//}
+//print(squareTwo(5))
+//
+//
+//let string: String = String(describing: String.self)
+//print(string)
+//
+//enum Planet: Int {
+//   case Mercury = 1
+//   case Venus
+//   case Earth
+//   case Mars
+//}
+//
+//let testa = Planet(rawValue: 3)
+//
+//let names = ["Pilot": "Wash", "Doctor": "Simon"]
+//for (key, value) in names.enumerated() {
+//   let testVar = value
+//   print(testVar)
+//}
+//
+//let testaraay = [9, 7, 6, 3, 1]
+//let testaraay2 = [9, 7, 6, 3, 1]
+//
+//let zipped = zip(testaraay, testaraay2)
+//print(zipped)
+
+
