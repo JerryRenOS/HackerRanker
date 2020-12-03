@@ -2,7 +2,25 @@ import Foundation
 import UIKit
 import XCTest
 // A constantly evolving mis·cel·la·ne·ous collection in-progress //
-               
+    
+
+// _____________________________________________
+// Dec 2nd    prepppa
+
+func find(value searchValue: String, in array: [String]) -> Int?
+{
+    for (index, value) in array.enumerated()
+    {
+        if value == searchValue {
+            return index
+        }
+    }
+    return nil
+}
+//func index(array: [Int], range: Range<Int>) -> Int? {
+//}
+
+
 
 // _____________________________________________
 // Nov 17th
