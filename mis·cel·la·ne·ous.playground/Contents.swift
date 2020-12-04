@@ -2,25 +2,7 @@ import Foundation
 import UIKit
 import XCTest
 // A constantly evolving mis·cel·la·ne·ous collection in-progress //
-    
-
-// _____________________________________________
-// Dec 2nd    prepppa
-
-func find(value searchValue: String, in array: [String]) -> Int?
-{
-    for (index, value) in array.enumerated()
-    {
-        if value == searchValue {
-            return index
-        }
-    }
-    return nil
-}
-//func index(array: [Int], range: Range<Int>) -> Int? {
-//}
-
-
+ 
 
 // _____________________________________________
 // Nov 17th
@@ -958,6 +940,26 @@ let testaraay2 = [9, 7, 6, 3, 1]
 
 let zipped = zip(testaraay, testaraay2)
 print(zipped)
+
+
+// ________________-
+
+private func genericallyRemovingDuplicates<T: Hashable>(objects: [T]) -> [T] {
+    let objSet = Set(objects)
+    let objArr = Array(objSet)
+    return objArr
+}
+          
+struct inAndLikes: Hashable {
+    let id: Int
+    let likes: Int
+}
+
+let arr = [inAndLikes(id: 1, likes: 50), inAndLikes(id: 1, likes: 50), inAndLikes(id: 1, likes: 60)]
+genericallyRemovingDuplicates(objects: arr)
+ 
+
+
 
 
 
