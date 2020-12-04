@@ -940,26 +940,3 @@ let testaraay2 = [9, 7, 6, 3, 1]
 
 let zipped = zip(testaraay, testaraay2)
 print(zipped)
-
-
-// ________________-
-
-private func genericallyRemovingDuplicates<T: Hashable>(objects: [T]) -> [T] {
-    let objSet = Set(objects)
-    let objArr = Array(objSet)
-    return objArr
-}
-          
-struct inAndLikes: Hashable {
-    let id: Int
-    let likes: Int
-}
-
-let arr = [inAndLikes(id: 1, likes: 50), inAndLikes(id: 1, likes: 50), inAndLikes(id: 1, likes: 60)]
-genericallyRemovingDuplicates(objects: arr)
- 
-
-
-
-
-
