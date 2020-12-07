@@ -940,3 +940,43 @@ let testaraay2 = [9, 7, 6, 3, 1]
 
 let zipped = zip(testaraay, testaraay2)
 print(zipped)
+       
+
+// MARK: - Dec 6th 2020
+
+// Find the max sum of numbers on consecutive indices.
+// array = new Integer[] {-5, 2, 2, 3, 4, -7, -3, 120}; // 121
+// array = new Integer[] {-5, 1, 2, 3, 4, 5, 6, -10, -5, 100}; // 106
+// array = new Integer[] {1, 2, 3, 4, 5, 6, 7, 8}; // 36
+// array = new Integer[] {-5, 1, 2, 3, 4, -10}; //10
+// array = new integer[] {-10, 2, 1, -1,-5} // 3 */
+
+private func maxiSummationFinder(arr: Array<Int>) -> Int {
+    let leng = arr.count
+    guard !arr.isEmpty else { return 0 }
+    guard leng > 1 else { return arr[0] }
+    let experimentedsum = arr.reduce(0) { $0 + $1 }
+    print(experimentedsum)
+    var currentSum = 0
+    var ultimateSum = Int.min
+    for element in arr {
+        currentSum += element
+        switch ultimateSum {
+        case let self where self < currentSum:
+            ultimateSum = currentSum
+        default:
+            ()
+        }
+        switch currentSum {
+        case let cself where cself < 0:
+            currentSum = 0
+        default:
+            break
+        }
+    }
+    return ultimateSum
+}
+
+maxiSummationFinder(arr: [-5, 2, 2, 3, 4, -7, -3, 120])
+maxiSummationFinder(arr: [-5, 1, 2, 3, 4, 5, 6, -10, -5, 100])
+maxiSummationFinder(arr: Array(arrayLiteral: -10, 2, 1, -1,-5))
