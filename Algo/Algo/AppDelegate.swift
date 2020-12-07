@@ -11,10 +11,13 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    let queueForThreadTrouble = DispatchQueue(label: "queueForThreadTrouble")         
-
+    let queueForThreadTrouble = DispatchQueue(label: "queueForThreadTrouble")
+    
+    let serialism = DispatchQueue(label: "come.queue.serial")
+    var dataRaceStr = "starter _"
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-       
+
 //        var imageryies = [String]()
 //        var mutatingCount = 0
 //
@@ -28,12 +31,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            imageryies.append("ImageMainThread") // fatal-erroed hahaha, good sh*t
 //            mutatingCount += 1
 //        }
-//
 //        DispatchQueue.main.asyncAfter(deadline: .now() + 1.3) {
 //            print("Mutating count is  ", mutatingCount)
 //            print("Imagery count is:  ", imageryies.count )
 //        }
-
+        
+       //  MARK: -
+        
+        //        DispatchQueue.global().async {
+        //            self.dataRaceStr += "dataRace "   // enable thread sanitizer to see the purple warning.
+        //        }
+        //        print(dataRaceStr)
+        
+        serialism.async {
+          print("3")
+      }; serialism.sync {
+          print("1")
+      }; serialism.async {
+          print("4")
+      };
+             
         return true
     }
 

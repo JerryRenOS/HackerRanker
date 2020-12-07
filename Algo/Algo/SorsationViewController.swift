@@ -11,6 +11,7 @@ import UIKit
 class SorsationViewController: UIViewController {
     
     var arrayForExperiment = [7, 1, 5, 3, 2, 9, 6, 8]
+    let appDelegateInstance = AppDelegate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,16 +20,29 @@ class SorsationViewController: UIViewController {
         
         insertionality(unsorted: &arrayForExperiment)
         selectionSort(intArray: arrayForExperiment)
+        
+//        self.dataRaceChecker()
+    }
+    
+}
+
+extension SorsationViewController {
+    private  func dataRaceChecker() {
+        DispatchQueue.global().async {
+            self.appDelegateInstance.dataRaceStr += "raceData "
+        }
+        // below executed on main thread, but both threads try to access the same string simultaneously, resulting in a acess race.
+        print(appDelegateInstance.dataRaceStr)
     }
 }
+                  
 
 
 private func genericInsertionality<T: Comparable>(unsorted: [T], by comparison: (T, T) -> Bool) -> [T] {
     var unsorted = unsorted
     
     for q in 0..<unsorted.count {
-        
-        
+       
     }
     return Array<T>.init()
 }
