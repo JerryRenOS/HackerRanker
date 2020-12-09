@@ -1004,5 +1004,18 @@ private func commonPrefixBetweenTwoStrs(strOne: String, strTwo: String) -> Strin
     }
     return resultStr
 }
+commonPrefixBetweenTwoStrs(strOne: "31415926", strTwo: "31415767")
 
+// Above is helper for below 
+
+private func longestCommonPrefix(_ strs: [String]) -> String {
+    var prefixShared: String = strs[0]
+    for index in 1..<strs.count {
+        prefixShared = commonPrefixBetweenTwoStrs(strOne: prefixShared, strTwo: strs[index])
+        print(prefixShared)
+    }
+    return prefixShared
+}
+
+longestCommonPrefix(["flower","flow","flight"])
 
