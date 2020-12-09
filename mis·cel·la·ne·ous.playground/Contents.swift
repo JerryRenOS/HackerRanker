@@ -980,3 +980,29 @@ private func maxiSummationFinder(arr: Array<Int>) -> Int {
 maxiSummationFinder(arr: [-5, 2, 2, 3, 4, -7, -3, 120])
 maxiSummationFinder(arr: [-5, 1, 2, 3, 4, 5, 6, -10, -5, 100])
 maxiSummationFinder(arr: Array(arrayLiteral: -10, 2, 1, -1,-5))
+ 
+// MARK: -  Dec 8th 2020
+// Finding longest common prefix between a collection of strings.
+// Almost solved, but needs some micro-revisions.
+
+private func commonPrefixBetweenTwoStrs(strOne: String, strTwo: String) -> String {
+    var resultStr: String = String.init()
+    let lenOne = strOne.count, lenTwo = strTwo.count
+    let strArrOne = Array(strOne), strArrTwo = Array(strTwo)
+    var indexOne = 0, indexTwo = 0
+    var breaking = false
+    
+    while indexOne < lenOne, indexTwo < lenTwo, breaking == false {
+        switch strArrTwo[indexTwo] {
+        case let valTwo where valTwo != strArrOne[indexOne]:
+            breaking = true
+        default:
+            resultStr += String(strArrTwo[indexTwo])
+            indexOne += 1
+            indexTwo += 1
+        }
+    }
+    return resultStr
+}
+
+
