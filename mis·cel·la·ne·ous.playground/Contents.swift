@@ -2,7 +2,31 @@ import Foundation
 import UIKit
 import XCTest
 // A constantly evolving mis·cel·la·ne·ous collection in-progress //
- 
+
+
+// MARK: - linked list jumping around based on index
+
+private func jumpingList(_ A: inout [Int]) -> Int {
+    var pointer = 0
+    var counter = 0
+    var boolArr = Array(repeating: false, count: A.count)
+    while true {
+        if pointer == -1 {
+            return counter
+        }
+        pointer = A[pointer]
+        if boolArr[pointer] == true {
+            return counter
+        }
+        boolArr[pointer] = true
+        counter += 1
+    }
+}
+var testArr = [1, 4, -1, 3, 2]
+var testArr0 = [2, 1, 3, 5, 4, 0]
+var testArr1 = [1, 0] // without -1
+jumpingList(&testArr0)
+            
 
 // _____________________________________________
 // Nov 17th
@@ -45,7 +69,7 @@ let dictFromArrSorted = dictFromArr.sorted { $0.value > $1.value }
 // slightly different syntax than above, but achieving the sort as well haha
 print(dictFromArrSorted)
 
-   
+
 // ___________________________________________________________________
 // Nov 2nd
 // One-liner for counting occurrences of unique elements in an array
@@ -84,7 +108,7 @@ func gettingIndexInAString(targetString: String, index:Int) -> String {
 // __________________________________ //
 // Nov 14th -
 // Create a fruit class returning the required output
-    
+
 final class FruitDataClass {
     let fruitName: String
     let fruitCount: Int
@@ -154,12 +178,12 @@ let potentialPalin = "igBufQfobGi"
 print(checkingForPalinArr(targetArr: Array(arrayLiteral: potentialPalin)))
 print(palindromaCounta(targetStr: potentialPalin))
 
- 
+
 
 // __________________________________ //
 // Oct 28th 2020
 // reverse-summing two linkedlists - arr approach
-                 
+
 func summationOfLinkedLists( linkedArrayOne: Array<Int>, linkedArrayTwo: [Int]) -> Int {
     
     let reversedLinkedOne = Array(linkedArrayOne.reversed())
@@ -172,7 +196,7 @@ func summationOfLinkedLists( linkedArrayOne: Array<Int>, linkedArrayTwo: [Int]) 
     
     var biggerLinked: Array<Int>
     var smallerLinked: Array<Int>
-
+    
     switch linkedOneLength > linkedTwoLength {
     case true:
         biggerLinked = reversedLinkedOne
@@ -183,10 +207,10 @@ func summationOfLinkedLists( linkedArrayOne: Array<Int>, linkedArrayTwo: [Int]) 
     }
     var carryOver = 0
     var digitsArr = [Int].init()
-                             
+    
     for index in 0...biggerLength-1 {
         let upperNum = biggerLinked[index]
-    
+        
         if index <= smallerLength-1 {
             let lowerNum = smallerLinked[index]
             let upperlowerSum = upperNum + lowerNum
@@ -219,7 +243,7 @@ summationOfLinkedLists(linkedArrayOne: [2, 4, 3], linkedArrayTwo: [5, 6, 4])
 summationOfLinkedLists(linkedArrayOne: [0], linkedArrayTwo: [0])
 summationOfLinkedLists(linkedArrayOne: [9,9,9,9,9,9,9], linkedArrayTwo: [9,9,9,9])
 
- 
+
 // __________________________________ //
 // Oct 22nd & Oct 23rd 2020
 // BinaTreeBine
@@ -244,18 +268,18 @@ extension Binenode { // questionable but ...
 
 // xctestos in pground lmao
 class BinaTest: XCTestCase {
-        var treeConstruction: Binenode<Int> = {
+    var treeConstruction: Binenode<Int> = {
         let zero = Binenode(val: 0)
         let one = Binenode(val: 1)
         let five = Binenode(val: 5)
         let seven = Binenode(val: 7)
         let eight = Binenode(val: 8)
         let nine =  Binenode(val: 9)
-            seven.left = one
-            one.left = zero
-            one.right = five
-            seven.right = nine
-            nine.left = eight
+        seven.left = one
+        one.left = zero
+        one.right = five
+        seven.right = nine
+        nine.left = eight
         return seven
     }()
     
@@ -323,7 +347,7 @@ class BineSearchTree {
 
 fileprivate func Average(arr: [Double]?) -> [Double] {
     guard let arr = arr else { return [Double].init()}
-         
+    
     if arr.count == 0 {
         return []
     } else if arr.count == 1 {
@@ -389,7 +413,7 @@ class KVCProfile: NSObject {
     }
 }
 // the above code is erroneous dunno why
-    
+
 // MARK: - Nov 23rd
 // Async illustrator simplistic 
 
@@ -512,7 +536,7 @@ class OneDirectionLinkedList {
 let secondNode = LinkedNode(nextNode: nil, val: 36)
 let initalNode = LinkedNode(nextNode: secondNode, val: 33)
 OneDirectionLinkedList().printingLinkedList(initialNode: initalNode)
-          
+
 
 // __________________________________________________ //
 // Nov 17th
@@ -541,7 +565,7 @@ fileprivate func reversingStringBarringSpecialChars(originalStr: String) -> Stri
         }
     }
     filteredArr.reverse()
-
+    
     let sortedCharDict = specialCharDict.sorted { (first, second) -> Bool in
         return first.key < second.key
     }
@@ -551,7 +575,7 @@ fileprivate func reversingStringBarringSpecialChars(originalStr: String) -> Stri
         filteredArr.append("")
     }
     for (index, specialchar) in sortedCharDict {
-       filteredArr.insert(specialchar, at: index)
+        filteredArr.insert(specialchar, at: index)
     }
     newStr = filteredArr.joined(separator: "")
     print(newStr)
@@ -570,11 +594,11 @@ reversingStringBarringSpecialChars(originalStr: preStr2)
 // Approach 2 - a more standard method with swaps
 
 private func confirmedAsLatinAlphabetLetter(targetStr: String) -> Bool {  // helper to check if an element belongs to
-        let azRangeAscii = 97...122
-        let AZrangeAscii = 65...90
-        let targetChar = Character(targetStr)
-        let asciiVal = Int(targetChar.asciiValue ?? 0)
-        return azRangeAscii.contains(asciiVal) || AZrangeAscii.contains(asciiVal)
+    let azRangeAscii = 97...122
+    let AZrangeAscii = 65...90
+    let targetChar = Character(targetStr)
+    let asciiVal = Int(targetChar.asciiValue ?? 0)
+    return azRangeAscii.contains(asciiVal) || AZrangeAscii.contains(asciiVal)
 }
 
 func reversalBySwap(originalStr: String) -> String {
@@ -630,13 +654,13 @@ private func contactsSearcher(arrOfNames: [String], arrOfPhoneNumbers: [String],
         }
     }
     matchesNames = matchingIndexes.map { arrOfNames[$0] } // filtering the array based on indexes
-
+    
     let namesSorted = matchesNames.sorted(by: <)
     guard let contactFound = namesSorted.first else { return "nobody"}
     print("Contact found is: \(contactFound)")
     return contactFound
 }
-        
+
 contactsSearcher(arrOfNames: ["pom", "pim"], arrOfPhoneNumbers: ["13240", "32410"], searchString: "324")
 contactsSearcher(arrOfNames: ["sander", "ann", "amy", "michael"], arrOfPhoneNumbers: ["123", "234", "345", "456"], searchString: "3")
 
@@ -644,13 +668,13 @@ contactsSearcher(arrOfNames: ["sander", "ann", "amy", "michael"], arrOfPhoneNumb
 // MARK: - Minimum number of coins flipped
 
 // Approach 1, more concise
-    
+
 private func coinFlippingConcise(arrOfCoins: [Int]) -> Int {
     
     guard !arrOfCoins.isEmpty else { return 0 }
     var numOfFlips: Int = 0
     let leng = arrOfCoins.count
-
+    
     var alternatingArr: Array<Int> = []
     for index in 0...leng-1 {
         switch index%2 {
@@ -680,7 +704,7 @@ private func coinFlippingVerbose(arrOfCoins: [Int]) -> Int {
     var numOfFlipsOne: Int = 0
     var numOfFlipsTwo: Int = 0
     let leng = arrOfCoins.count
-
+    
     var alternatingArrOne: Array<Int> = []
     for index in 0...leng-1 {
         switch index%2 {
@@ -690,7 +714,7 @@ private func coinFlippingVerbose(arrOfCoins: [Int]) -> Int {
             alternatingArrOne.append(1)
         }
     }
-             
+    
     var alternatingArrTwo = alternatingArrOne
     alternatingArrTwo.removeFirst(1)
     switch alternatingArrOne.last {
@@ -738,11 +762,11 @@ coinFlippingConcise(arrOfCoins: arr2)
 coinFlippingConcise(arrOfCoins: arr3)
 coinFlippingConcise(arrOfCoins: arr4)
 coinFlippingConcise(arrOfCoins: arr5)
- 
+
 
 // MARK: - Balanced fragments
 // Nov 21st
-    
+
 // 微暴力 approach & 非暴力 approach
 private func balancedFragments(targetString: String) -> Int {
     
@@ -859,13 +883,13 @@ print(makeAnagram(a: "cde", b: "abc"))
 func funnyString(s: String) -> String {
     var funnyOrNot = "Not Funny"
     var sArray = [String].init()
-
+    
     for character in s {
         sArray.append(String(character))
     }
     var reversedSArray = Array<String>.init()
     var reversedS = String.init()
- 
+    
     var index = s.count - 1
     while index >= 0 {
         reversedSArray.append(sArray[index])
@@ -873,14 +897,14 @@ func funnyString(s: String) -> String {
     }
     var reversedAscii = [Int].init()
     var originalAscii: [Int] = []
-
+    
     for index in 0...(reversedSArray.count-1) {
         reversedAscii.append(Int(Character(reversedSArray[index]).asciiValue!))
         originalAscii.append(Int(Character(sArray[index]).asciiValue!))
     }
     var originalDifference = [Int].init()
     var reversedDifference = Array<Int>.init()
-
+    
     for index in 0...(reversedAscii.count-2) {
         let absoluteDiffR = abs(reversedAscii[index] - reversedAscii[index+1])
         let absoluteDiffO = abs(originalAscii[index+1] - originalAscii[index])
@@ -897,7 +921,7 @@ print(funnyString(s: "niubaracaca"))
 for charac in "abcdefghijklmnopqrstuvwxyz" {
     print(Character(String(charac)).asciiValue!)
 }
- 
+
 // MARK: - Babe Hack (hackingwithswift)  ~ Nov 17th
 
 var firstArr = [1, 2, 3]
@@ -940,7 +964,7 @@ let testaraay2 = [9, 7, 6, 3, 1]
 
 let zipped = zip(testaraay, testaraay2)
 print(zipped)
-       
+
 
 // MARK: - Dec 6th 2020
 
@@ -980,7 +1004,8 @@ private func maxiSummationFinder(arr: Array<Int>) -> Int {
 maxiSummationFinder(arr: [-5, 2, 2, 3, 4, -7, -3, 120])
 maxiSummationFinder(arr: [-5, 1, 2, 3, 4, 5, 6, -10, -5, 100])
 maxiSummationFinder(arr: Array(arrayLiteral: -10, 2, 1, -1,-5))
- 
+      
+      
 // MARK: -  Dec 8th 2020
 // Finding longest common prefix between a collection of strings.
 // Almost solved, but needs some micro-revisions.
@@ -1004,11 +1029,12 @@ private func commonPrefixBetweenTwoStrs(strOne: String, strTwo: String) -> Strin
     }
     return resultStr
 }
+
 commonPrefixBetweenTwoStrs(strOne: "31415926", strTwo: "31415767")
 
-// Above is helper for below 
-
 private func longestCommonPrefix(_ strs: [String]) -> String {
+    guard !strs.isEmpty else { return "" }
+    
     var prefixShared: String = strs[0]
     for index in 1..<strs.count {
         prefixShared = commonPrefixBetweenTwoStrs(strOne: prefixShared, strTwo: strs[index])
@@ -1017,5 +1043,6 @@ private func longestCommonPrefix(_ strs: [String]) -> String {
     return prefixShared
 }
 
+longestCommonPrefix(Array.init())
 longestCommonPrefix(["flower","flow","flight"])
 
