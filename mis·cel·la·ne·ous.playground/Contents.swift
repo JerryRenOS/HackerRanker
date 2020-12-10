@@ -4,30 +4,7 @@ import XCTest
 // A constantly evolving mis·cel·la·ne·ous collection in-progress //
 
 
-// MARK: - linked list jumping around based on index
-
-private func jumpingList(_ A: inout [Int]) -> Int {
-    var pointer = 0
-    var counter = 0
-    var boolArr = Array(repeating: false, count: A.count)
-    while true {
-        if pointer == -1 {
-            return counter
-        }
-        pointer = A[pointer]
-        if boolArr[pointer] == true {
-            return counter
-        }
-        boolArr[pointer] = true
-        counter += 1
-    }
-}
-var testArr = [1, 4, -1, 3, 2]
-var testArr0 = [2, 1, 3, 5, 4, 0]
-var testArr1 = [1, 0] // without -1
-jumpingList(&testArr0)
-            
-
+        
 // _____________________________________________
 // Nov 17th
 // Sorting dictionary by key - definitely useful
@@ -1045,4 +1022,69 @@ private func longestCommonPrefix(_ strs: [String]) -> String {
 
 longestCommonPrefix(Array.init())
 longestCommonPrefix(["flower","flow","flight"])
+
+
+// MARK: - Dec 10th 2020
+// MARK: - Ice & Bubble Ringo (a.k.a) 爱丽丝 & 碧噢碧  *摘苹果
+              
+private func icebubbleRingo(_ A: inout [Int], _ K: Int, _ L: Int) -> Int {
+   guard (K+L) < A.count else { return -1 }
+   
+   for index in 1..<A.count {
+       A[index] = A[index] + A[index-1]
+   }
+   var desired = A[K + L - 1]
+   var maxUno = A[K - 1]
+   var maxDos = A[L - 1]
+
+   for q in (K+L)...(A.count - 1) {
+       let tempoUno = A[q - K] - A[q - K - L]
+       let tempoDos = A[q - L] - A[q - K - L]
+   
+       maxUno = max(tempoUno, maxUno)
+       maxDos = max(tempoDos, maxDos)
+
+       let tempoTres = A[q] - A[q - K] + maxUno
+       let tempoCuatro = A[q] - A[q - L] + maxDos
+       let tempoWinner = max(tempoTres, tempoCuatro)
+       
+       desired = (desired >= tempoWinner) ? desired: tempoWinner
+   }
+   return desired
+}
+
+// 24 = desired
+var intArr0 = [6, 1, 4, 6, 3, 2, 7, 4], intArr1 = [10, 19, 15]
+let K0 = 3, K1 = 2
+let L0 = 2, L1 = 2
+
+icebubbleRingo(&intArr0, K0, L0)
+
+
+// MARK: - linked list jumping around based on index
+
+private func jumpingList(_ A: inout [Int]) -> Int {
+    var pointer = 0
+    var counter = 0
+    var boolArr = Array(repeating: false, count: A.count)
+    while true {
+        if pointer == -1 {
+            return counter
+        }
+        pointer = A[pointer]
+        if boolArr[pointer] == true {
+            return counter
+        }
+        boolArr[pointer] = true
+        counter += 1
+    }
+}
+var testArr = [1, 4, -1, 3, 2]
+var testArr0 = [2, 1, 3, 5, 4, 0]
+var testArr1 = [1, 0] // without -1
+jumpingList(&testArr0)
+
+
+
+     
 
