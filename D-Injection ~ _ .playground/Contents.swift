@@ -1,7 +1,41 @@
 import UIKit
+         
+// MARK: - Tightly-coupled / coupled / loosely-coupled / de-coupled /
+ 
+protocol SessionManagerProtocol {
+    func loggingOut()
+    func loggingIn()
+}
 
-// ________________________________
-// d-injection with protoc
+class LosselyCoupledClass {
+    let sessionManager: SessionManagerProtocol
+    
+    init(sessionManager: SessionManagerProtocol) {
+        self.sessionManager = sessionManager
+    }
+}
+
+// incompletet yet ...
+
+
+
+// MARK: - Constructor injection vs Property injection vs Method injection
+
+struct LibrStruct { var title: String } // the injectable service for the below clients
+
+protocol LibrManager {
+    func destroyingAllBooks(in library: LibrStruct)  //method injection
+}
+
+class LibrViewModel {
+    var libr: LibrStruct?  //property injection
+    init(libr: LibrStruct) {   //constructor injection
+        self.libr = libr
+    }
+}
+
+// _____________________________________________
+// MARK: - d-injection with protoc vs no d-injection
 
 enum Result {
     case Success(confirmation: String)
@@ -81,32 +115,32 @@ class InjectedRestau {
         }
     }
 }
-    
+
 
 // ________________________________
 // dependency-injection-less
-    
-    class DominicanCuisineChef {
-        func prepIngredients() {
-            print("prepas complete")
-        }
-        func cookStew() {
-            print("stew cooked")
-        }
+
+class DominicanCuisineChef {
+    func prepIngredients() {
+        print("prepas complete")
+    }
+    func cookStew() {
+        print("stew cooked")
+    }
+}
+
+class UninjectedRestau {
+    let chefer: DominicanCuisineChef
+    init(chefer: DominicanCuisineChef) {
+        self.chefer = chefer
     }
     
-    class UninjectedRestau {
-        let chefer: DominicanCuisineChef
-        init(chefer: DominicanCuisineChef) {
-            self.chefer = chefer
-        }
-        
-        func open() {
-            chefer.prepIngredients()
-        }
-        func prepaForLunchi() {
-            chefer.cookStew()
-        }
+    func open() {
+        chefer.prepIngredients()
+    }
+    func prepaForLunchi() {
+        chefer.cookStew()
+    }
 }
 
 
