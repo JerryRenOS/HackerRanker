@@ -1,7 +1,7 @@
 import UIKit
-         
+
 // MARK: - Tightly-coupled / coupled / loosely-coupled / de-coupled /
- 
+
 protocol SessionManagerProtocol {
     func loggingOut()
     func loggingIn()
@@ -13,9 +13,26 @@ class LosselyCoupledClass {
     init(sessionManager: SessionManagerProtocol) {
         self.sessionManager = sessionManager
     }
+    
+    func logOutButtonTouched() {
+        sessionManager.loggingOut()
+    }
 }
 
-// incompletet yet ...
+// ______________________
+
+class DeCoupledClass {
+    var loggingOutClosure: () -> ()
+    
+    init(closureForLogOut: @escaping () -> ()) {
+        self.loggingOutClosure = closureForLogOut
+    }
+    
+    func logOutButtonTouched() {
+        loggingOutClosure()
+    }
+}
+
 
 
 
