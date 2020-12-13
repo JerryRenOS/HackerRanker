@@ -1,10 +1,55 @@
 import Foundation
 import UIKit
 
-// 9.24 & 9.30 & 10.8
+// MARK: - Dec 11th
+           
+// Failable
+struct Employee {
+    var entryname: String
+    var passcode: String
+    
+    init?(entryname: String, passcode: String) {  // Failable (init?) initialization
+        guard passcode.count >= 11 else { return nil }
+        guard passcode.lowercased() != passcode else { return nil }
+        self.entryname = entryname
+        self.passcode = passcode
+    }
+}
 
 
-// 9/24 below ____________________________
+// DiscardableResult (can return something or return nothing, silencing the warning of result not being used)
+
+@discardableResult
+private func settabledefaults(val: Int, forKey key: String) -> Bool {
+    guard val >= 0 && val <= 99 else { return false }
+    UserDefaults.standard.setValue(val, forKey: key)
+    UserDefaults.standard.synchronize()
+    return true
+}
+                
+private func gettabledefaults(forKey key: String) -> Int {
+    return UserDefaults.standard.integer(forKey: key)
+}
+                        
+let percentageVal = 77
+let percentageValDiscardable = 111
+let percentageKey = "%"
+
+settabledefaults(val: percentageValDiscardable, forKey: percentageKey)
+gettabledefaults(forKey: percentageKey)
+                     
+
+
+        
+
+
+
+
+
+
+// MARK: - 9.24 & 9.30 & 10.8
+      
+// Sep 24  ____________________________
 
 protocol TogglableProtocol {
     mutating func toggle()
