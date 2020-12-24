@@ -1086,5 +1086,29 @@ jumpingList(&testArr0)
 
 
 
-     
+
+// MARK: - Dec 24th
+
+// Formatting a 10 digit number into a phone number look-alike
+
+@discardableResult
+private func phoneDigitsFormatter(numb: Int) -> String {
+    var phoneArr = Array(String(numb))
+    let indexes = [0, 4, 5, 9]
+    let elements = ["(", ")", "-", "-"]
+    var i = 0
+    indexes.forEach {
+        phoneArr.insert(contentsOf: elements[i], at: $0)
+        i += 1
+    }
+    let phoneStr: String = String(phoneArr)
+    print(phoneStr)
+    return phoneStr
+}
+
+phoneDigitsFormatter(numb: 7327327732)
+
+
+
+
 
