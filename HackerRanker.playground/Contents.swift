@@ -1996,3 +1996,25 @@ maxiSummationFinder(arr: [-5, 2, 2, 3, 4, -7, -3, 120])
 maxiSummationFinder(arr: [-5, 1, 2, 3, 4, 5, 6, -10, -5, 100])
 maxiSummationFinder(arr: Array(arrayLiteral: -10, 2, 1, -1,-5))
 
+// MARK: - Dec 23th
+// All occurences of "a" need to precede all occurences of "b" (easy peezy)
+
+private func abOccurences(targetStr: String) -> Bool {
+    let targetArr = Array(targetStr)
+    var aIndexes : [Int] = []
+    var bIndexes: [Int] = []
+    for index in 0...targetArr.count - 1 {
+        let element = String(targetArr[index])
+        switch element {
+        case "b":
+            bIndexes.append(index)
+        case "a":
+            aIndexes.append(index)
+        default:
+            print(aIndexes, bIndexes) // never gon be here tho
+        }
+    }
+    let aHigh = aIndexes.max() ?? 0
+    let bLow = bIndexes.min() ?? targetArr.count
+    return (aHigh<=bLow)
+}
