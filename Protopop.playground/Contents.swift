@@ -1,6 +1,9 @@
 import Foundation
 import UIKit
 
+
+
+
 // MARK: - Dec 11th
            
 // Failable
@@ -37,9 +40,31 @@ let percentageKey = "%"
 
 settabledefaults(val: percentageValDiscardable, forKey: percentageKey)
 gettabledefaults(forKey: percentageKey)
-                     
 
 
+
+// MARK: - Dec 17th
+
+// NSCopying
+
+class Shito: NSCopying {
+    var 名: String
+    var 姓: String
+    init(given: String, sur: String) {
+        self.名 = given
+        self.姓 = sur
+    }
+    func copy(with zone: NSZone? = nil) -> Any {
+        let copyMade = Shito(given: 名, sur: 姓)
+        return copyMade
+    }
+}
+let she = Shito(given: "her", sur: "hers")
+let he = she.copy() as? Shito
+he?.名 = "him"
+he?.姓 = "his"
+print(she.名, she.姓)
+print(he?.名, he?.姓)
         
 
 
